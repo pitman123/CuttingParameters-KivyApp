@@ -1,0 +1,59 @@
+<SpindleSpeedScreen>:
+    id: spindle_speeds_screen
+    score: score
+    machined_diameter: machined_diameter
+    cutting_speed: cutting_speed
+
+    id: cutting_speed_screen
+    name: 'cutting_speed_screen'
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            id: toolbar
+            title: "Spindle speed"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('turning_screen', 'right')]]
+
+
+        GridLayout:
+            cols:1
+            spacing: 20
+            padding: 10
+
+            MDLabel:
+                text: 'Spindle speed (n) rpm'
+                halign: "center"
+
+            MDLabel:
+                id: score
+                text: '0'
+                font_style: 'H3'
+                halign: "center"
+
+
+            MyMDTextField:
+                id: machined_diameter
+                hint_text: "Machined diameter (Dm) [mm]"
+
+
+
+            MyMDTextField:
+                id: cutting_speed
+                hint_text: "Cutting speed (vc) [m/min]"
+
+
+
+            MDFlatButton:
+                text: "Clear"
+                increment_width: "295dp"
+                text_color: 1, 1, 1, 1
+                md_bg_color: app.theme_cls.primary_color
+                halign: "center"
+                height: dp(40)
+                on_release:
+                    app.clear_text(machined_diameter, cutting_speed)
+
+
+            MDLabel:

@@ -1,0 +1,71 @@
+#: import utils kivy.utils
+
+<ParametersScreen>:
+    id: parameters_screen
+    name: "parameters_screen"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            id: toolbar
+            title: "Parameters"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('main', 'right')]]
+
+        BoxLayout:
+            padding: 3, 3
+
+
+            GridLayout:
+                cols:1
+                spacing: 3
+
+
+                MDRectangleFlatIconButton:
+
+                    text: "TURNING"
+                    font_style: dp(40)
+                    icon: "tools"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('turning_screen', 'left')
+
+                MDRectangleFlatIconButton:
+                    text: "MILLING"
+                    icon: "tools"
+                    width: dp(343)
+                    height: dp(60)
+
+                MDRectangleFlatIconButton:
+                    text: "DRILLING"
+                    icon: "tools"
+                    width: dp(343)
+                    height: dp(60)
+
+                MDRectangleFlatIconButton:
+                    text: "TAPPING"
+                    icon: "tools"
+                    width: dp(343)
+                    height: dp(60)
+
+                MDRectangleFlatIconButton:
+                    text: "REAMING"
+                    icon: "tools"
+                    width: dp(343)
+                    height: dp(60)
+
+                MDRectangleFlatIconButton:
+                    text: "TOLERANCES"
+                    icon: "tools"
+                    width: dp(343)
+                    height: dp(60)
+
+
+
+
+
+
+                MDLabel:
+

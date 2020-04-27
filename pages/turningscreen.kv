@@ -1,0 +1,83 @@
+<TurningScreen>:
+    id: turning_screen
+    name: "turning_screen"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            id: toolbar
+            title: "Turning"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('parameters_screen', 'right')]]
+
+
+        BoxLayout:
+            padding: 3, 3
+
+
+            GridLayout:
+                cols:1
+                spacing: 3
+
+
+                MDRectangleFlatIconButton:
+
+                    text: "Cutting speed"
+                    icon: "arrow-right"
+                    halign: "center"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('cutting_speed_screen', 'left')
+                MDRectangleFlatIconButton:
+
+                    text: "Spindle speed"
+                    icon: "arrow-right"
+                    halign: "center"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('spindle_speeds_screen', 'left')
+                MDRectangleFlatIconButton:
+
+                    text: "Metal removal rate"
+                    icon: "arrow-right"
+                    halign: "center"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('cutting_speed_screen', 'left')\
+
+                MDRectangleFlatIconButton:
+
+                    text: "Power requirement"
+                    icon: "arrow-right"
+                    halign: "center"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('cutting_speed_screen', 'left')
+
+                MDRectangleFlatIconButton:
+
+                    text: "Time in cut"
+                    icon: "arrow-right"
+                    halign: "center"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('cutting_speed_screen', 'left')
+
+
+
+
+
+
+
+
+
+                MDLabel:
+
+
+

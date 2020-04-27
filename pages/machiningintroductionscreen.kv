@@ -1,0 +1,143 @@
+
+<Content>
+
+    size_hint: 1, None
+    height: self.minimum_height
+    orientation: 'vertical'
+    adaptive_height: True
+    padding: 3,3
+
+    MDLabel:
+
+        text: root.text
+        font_style: "Body2"
+        theme_text_color: "Secondary"
+        size_hint:  1, None
+        bg_color: 1, 1, 0
+
+        height: self.texture_size[1]
+    MDSeparator:
+        height: "2dp"
+
+
+    MDLabel:
+        text: ""
+        theme_text_color: "Secondary"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+
+
+<Content_2>
+    size_hint: 1, None
+    height: self.minimum_height
+    orientation: 'vertical'
+    adaptive_height: True
+    padding: 3,3
+
+    MDLabel:
+
+        text: root.text_01
+        font_style: "Body2"
+        theme_text_color: "Secondary"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    FitImage:
+        source: "icons/stal.png"
+        size_hint: 1, None
+        halign: "center"
+
+    MDLabel:
+
+        text: root.text_02
+        font_style: "Body2"
+        theme_text_color: "Secondary"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+<Content_3>
+    size_hint: 1, None
+    height: self.minimum_height
+    orientation: 'vertical'
+    adaptive_height: True
+    padding: 3,3
+
+    MDLabel:
+
+        text: 'e'
+        font_style: "Body2"
+        theme_text_color: "Secondary"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+<Content_4>
+    size_hint: 1, None
+    height: self.minimum_height
+    orientation: 'vertical'
+    adaptive_height: True
+    padding: 3,3
+
+    MDLabel:
+
+        text: 'e'
+        font_style: "Body2"
+        theme_text_color: "Secondary"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+<Content_5>
+    size_hint: 1, None
+    height: self.minimum_height
+    orientation: 'vertical'
+    adaptive_height: True
+    padding: 3,3
+
+    MDLabel:
+
+        text: 'e'
+        font_style: "Body2"
+        theme_text_color: "Secondary"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+
+
+
+
+
+<MachiningIntroductionScreen>:
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            id: toolbar
+            title: "Knowlage"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('knowledge_screen', 'right')]]
+
+        ScrollView:
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                padding: 3, 3
+                spacing: 3
+                height: self.minimum_height
+                id: box
+
+                MDLabel:
+
+
+
+
+
+
+
+
+
+
+
+
+

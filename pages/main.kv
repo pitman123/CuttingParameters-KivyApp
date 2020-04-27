@@ -1,0 +1,197 @@
+#: include pages/parametersscreen.kv
+#: include pages/turningscreen.kv
+#: include pages/cuttingspeedscreen.kv
+#: include pages/knowledgescreen.kv
+#: include pages/machiningintroductionscreen.kv
+#: include pages/testscreen.kv
+#: include pages/spindlespeedscreen.kv
+#: include pages/test_01.kv
+#: include pages/test_02.kv
+#: include pages/test_03.kv
+#: include pages/grafico.kv
+
+GridLayout:
+    cols: 1
+
+    WindowManager:
+        id: window_manager
+        MainScreen:
+            name: 'main'
+            id: main
+        ParametersScreen:
+            name: 'parameters_screen'
+            id: parameters_screen
+        TurningScreen:
+            name: 'turning_screen'
+            id: turning_screen
+        CuttingSpeedScreen:
+            name: 'cutting_speed_screen'
+            id: cutting_speed_screen
+        KnowledgeScreen:
+            name: 'knowledge_screen'
+            id: knowledge_screen
+        MachiningIntroductionScreen:
+            name: 'machining_introduction_screen'
+            id: machining_introduction_screen
+        TestScreen:
+            name: 'test_screen'
+            id: test_screen
+        SpindleSpeedScreen:
+            name: 'spindle_speeds_screen'
+            id: spindle_speed_screen
+        Test01Screen:
+            name: 'test_01'
+            id: test_01
+        Test02Screen:
+            name: 'test_02'
+            id: test_02
+        Test03Screen:
+            name: 'test_03'
+            id: test_03
+        Grafico:
+            name: 'grafico'
+            id: grafico
+
+
+<MainScreen>:
+    name: 'main'
+    BoxLayout:
+        orientation: "vertical"
+        panel: panel
+
+        MDToolbar:
+            id: toolbar
+            title: "App"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["menu", lambda x: None]]
+
+        MDBottomNavigation:
+            id: panel
+
+            MDBottomNavigationItem:
+
+                text: "Home"
+                icon: "home"
+
+                BoxLayout:
+
+                    size_hint_y: .95
+                    padding: 15, 10
+                    orientation: 'vertical'
+
+                    GridLayout:
+                        cols:2
+                        spacing:15
+
+                        MDCard:
+                            orientation: "vertical"
+                            padding: "8dp"
+                            border_radius: '10dp'
+
+                            MDIconButton:
+                                icon: "calculator"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+                                user_font_size: "70sp"
+                                halign: "center"
+                                on_release:
+                                    app.change_screen('parameters_screen', 'left')
+
+                            MDLabel:
+                                text: "PARAMETERS"
+                                theme_text_color: "Secondary"
+                                font_style: "Body2"
+                                size_hint_y: None
+                                height: self.texture_size[1]
+                                halign: "center"
+
+                        MDCard:
+                            orientation: "vertical"
+                            padding: "8dp"
+                            border_radius: '10dp'
+
+                            MDIconButton:
+                                icon: "school-outline"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+                                user_font_size: "70sp"
+                                halign: "center"
+                                on_release:
+                                    app.change_screen('knowledge_screen', 'left')
+
+                            MDLabel:
+                                text: "KNOWLEDGE"
+                                theme_text_color: "Secondary"
+                                font_style: "Body2"
+                                size_hint_y: None
+                                height: self.texture_size[1]
+                                halign: "center"
+
+                        MDCard:
+                            orientation: "vertical"
+                            padding: "8dp"
+                            border_radius: '10dp'
+
+                            MDIconButton:
+                                icon: "format-list-checks"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+                                user_font_size: "70sp"
+                                halign: "center"
+                                on_release:
+                                    app.change_screen('test_screen', 'left')
+
+                            MDLabel:
+                                text: "TEST"
+                                theme_text_color: "Secondary"
+                                font_style: "Body2"
+                                size_hint_y: None
+                                height: self.texture_size[1]
+                                halign: "center"
+
+                        MDCard:
+                            orientation: "vertical"
+                            padding: "8dp"
+                            border_radius: '10dp'
+
+                            MDIconButton:
+                                icon: "chart-areaspline"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+                                user_font_size: "70sp"
+                                halign: "center"
+                                on_release:
+                                    app.change_screen('grafico', 'left')
+
+                            MDLabel:
+                                text: "PLOT"
+                                theme_text_color: "Secondary"
+                                font_style: "Body2"
+                                size_hint_y: None
+                                height: self.texture_size[1]
+                                halign: "center"
+
+                    BoxLayout:
+                        size_hint_y: .45
+                        MDLabel:
+
+
+            MDBottomNavigationItem:
+                name: "files2"
+                text: "ACCOUNT"
+                icon: "account"
+
+                MDLabel:
+                    font_style: "Body1"
+                    theme_text_color: "Primary"
+                    text: "I programming of C++"
+                    halign: "center"
+
+            MDBottomNavigationItem:
+                name: "files3"
+                text: "SETTINGS"
+                icon: "settings"
+
+                MDLabel:
+                    font_style: "Body1"
+                    theme_text_color: "Primary"
+                    text: "Oh god JS again"
+                    halign: "center"
+
+

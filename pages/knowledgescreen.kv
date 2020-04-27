@@ -1,0 +1,65 @@
+<KnowledgeScreen>:
+    name: 'knowledge_screen'
+    id: knowledge_screen
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            id: toolbar
+            title: "Knowlage"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('main', 'right')]]
+
+
+
+        BoxLayout:
+            padding: 3, 3
+
+
+            GridLayout:
+                cols:1
+                spacing: 3
+
+                MDRectangleFlatIconButton:
+
+                    text: "WSTEP DO OBROBKI SKRAWANIEM"
+                    icon: "lightbulb"
+                    halign: "center"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('machining_introduction_screen', 'left')
+
+                MDRectangleFlatIconButton:
+
+                    text: "TOCZENIE"
+                    icon: "lightbulb"
+                    halign: "center"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('cutting_speed_screen', 'left')
+
+                MDRectangleFlatIconButton:
+
+                    text: "FREZOWANIE"
+                    icon: "lightbulb"
+                    halign: "center"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('cutting_speed_screen', 'left')
+
+                MDRectangleFlatIconButton:
+
+                    text: "WIERCENIE"
+                    icon: "lightbulb"
+                    halign: "center"
+                    width: dp(343)
+                    height: dp(60)
+                    on_release:
+                        app.change_screen('cutting_speed_screen', 'left')
+
+                MDLabel:
+
