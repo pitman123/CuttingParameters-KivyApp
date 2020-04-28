@@ -12,6 +12,8 @@ from kivy.garden.matplotlib import FigureCanvasKivyAgg
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.floatlayout import FloatLayout
+from kivymd.uix.menu import MDDropdownMenu
+
 from kivymd.uix.button import MDRaisedButton
 
 from kivyappp.kivymd.uix.button import MDFlatButton
@@ -44,6 +46,28 @@ class ParametersScreen(Screen):
 
 
 class TurningScreen(Screen):
+    pass
+
+
+class PowerRequirementScreen(Screen):
+    # def __init__(self, **kw):
+    #     super().__init__(**kw)
+    #     menu_items = [90, 80, 70]
+    #     self.menu = MDDropdownMenu(
+    #         caller=self.ids.field,
+    #         items=menu_items,
+    #         position='bottom',
+    #         callback=self.set_item,
+    #         width_mult=4,
+    #     )
+
+
+    def set_item(self, instance):
+        def set_item(interval):
+            self.ids.field.text = instance.text
+
+
+class MetalRemovalRateScreen(Screen):
     pass
 
 

@@ -1,0 +1,69 @@
+<PowerRequirementScreen>:
+
+    score: score
+    metal_removal_rate: metal_removal_rate
+    specific_cutting_force: specific_cutting_force
+    field: field
+
+    id: power_requirement_screen
+    name: 'power_requirement_screen'
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            id: toolbar
+            title: "Power requirement"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('turning_screen', 'right')]]
+
+
+        GridLayout:
+            cols:1
+            spacing: 20
+            padding: 10
+
+            MDLabel:
+                text: 'Power requirement (Pc) kW'
+                secondary_text: 'kW'
+                halign: "center"
+
+            MDLabel:
+                id: score
+                text: '0'
+                font_style: 'H3'
+                halign: "center"
+
+
+            MyMDTextField:
+                id: metal_removal_rate
+                hint_text: "Metal removal rate (Q) [cm3/min]"
+
+            MDTextField:
+                id: field
+
+                size_hint_x: None
+                width: "50dp"
+                hint_text: "Password"
+                on_focus: if self.focus: root.menu.open()
+
+
+
+            MyMDTextField:
+                id: specific_cutting_force
+                hint_text: "Specific cutting force (kc) [N/mm2]"
+
+
+
+            MDFlatButton:
+                text: "Clear"
+                increment_width: "295dp"
+                text_color: 1, 1, 1, 1
+                md_bg_color: app.theme_cls.primary_color
+                halign: "center"
+                height: dp(40)
+                on_release:
+                    app.clear_text(machined_diameter, cutting_speed)
+
+
+            MDLabel:
