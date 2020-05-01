@@ -49,6 +49,10 @@ class TurningScreen(Screen):
     pass
 
 
+class TimeInScreen(Screen):
+    pass
+
+
 class PowerRequirementScreen(Screen):
     # def __init__(self, **kw):
     #     super().__init__(**kw)
