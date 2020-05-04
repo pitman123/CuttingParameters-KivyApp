@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c5697ed5-ad2f-46c0-bfe9-7933b0ed0379" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/test/test_03.kv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parameters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/cuttingspeedscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/turning/cuttingspeedscreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/grafico.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/grafico.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/knowledgescreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/knowledgescreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/machiningintroductionscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/knowledge/machiningintroductionscreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/main.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/metalremovalratescreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/turning/metalremovalratescreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/millingpages/mcuttingspeed.kv" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/millingpages/mmetalremovalrate.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/millingpages/mcuttingspeed.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/millingpages/mpowerrequirement.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/millingpages/mmetalremovalrate.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/millingpages/mspindlespeed.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/millingpages/mpowerrequirement.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/millingpages/mtablefeed.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/millingpages/mspindlespeed.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/millingpages/mtimeincut.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/millingpages/mtablefeed.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/millingpages/mtorque.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/millingpages/mtimeincut.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/millingpages/mtotalcyccletime.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/millingpages/mtorque.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/parametersscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/parametersscreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/powerrequirementscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/turning/powerrequirementscreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/spindlespeedscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/turning/spindlespeedscreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test_01.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test_01.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test_02.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/millingpages/mtotalcyccletime.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/test_03.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test_02.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/testscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/testscreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/timeincutscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/turning/timeincutscreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/turningscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/parameter/turningscreen.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turning.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bSAFNeIrGnhLXRQcVlpwE38qop" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\pages\test" />
+      <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\pages\konwolage" />
+      <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\pages\parameter" />
+      <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\pages\parameter\turning" />
+      <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\pages\home" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="Unnamed" type="CompoundRunConfigurationType">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="CuttingParameters-KivyApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\piotr\PycharmProjects\projekt\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CuttingParameters-KivyApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Compound.Unnamed" />
+      <item itemvalue="Python.Unnamed" />
+      <item itemvalue="Python.main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c5697ed5-ad2f-46c0-bfe9-7933b0ed0379" name="Default Changelist" comment="" />
+      <created>1588615016579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588615016579</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588615144380">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588615144380" />
+    <state x="0" y="12" key="CommitChangelistDialog2" timestamp="1588622434918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588622434918" />
+    <state width="876" height="85" key="GridCell.Tab.0.bottom" timestamp="1588621250672">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="876" height="85" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588621250672" />
+    <state width="876" height="85" key="GridCell.Tab.0.center" timestamp="1588621250672">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="876" height="85" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588621250672" />
+    <state width="876" height="85" key="GridCell.Tab.0.left" timestamp="1588621250672">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="876" height="85" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588621250672" />
+    <state width="876" height="85" key="GridCell.Tab.0.right" timestamp="1588621250672">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="876" height="85" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588621250672" />
+    <state x="277" y="55" key="SettingsEditor" timestamp="1588615195574">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588615195574" />
+  </component>
+</project>

@@ -7,6 +7,14 @@ import matplotlib.pyplot as plt
 import matplotlib
 import numpy as np
 
+from parameters import (TurningScreen,
+                        MillingScreen,
+                        DrillingScreen,
+                        TappingScreen,
+                        ReamingScreen,
+                        TolerancesScreen,
+                     )
+
 from kivy.garden.matplotlib import FigureCanvasKivyAgg
 
 from kivy.core.window import Window
@@ -16,7 +24,7 @@ from kivymd.uix.menu import MDDropdownMenu
 
 from kivymd.uix.button import MDRaisedButton
 
-from kivyappp.kivymd.uix.button import MDFlatButton
+# from kivya.kivymd.uix.button import MDFlatButton
 from kivymd.uix.textfield import MDTextField
 from kivy.uix.widget import Widget
 
@@ -37,16 +45,34 @@ from kivymd.uix.dialog import MDDialog
 Window.size = (350, 550)
 
 
+# home pages
 class MainScreen(Screen):
+    """Main screen containg ..."""
     pass
 
 
 class ParametersScreen(Screen):
+    """Screen containing pages from moduls: """
     pass
 
 
-class TurningScreen(Screen):
+class KnowledgeScreen(Screen):
+    """..."""
     pass
+
+
+class PlotScreen(Screen):
+    """..."""
+    pass
+
+
+# Parameters pages
+TurningScreen()
+MillingScreen()
+DrillingScreen()
+TappingScreen()
+ReamingScreen()
+TolerancesScreen()
 
 
 class TimeInScreen(Screen):
@@ -64,7 +90,6 @@ class PowerRequirementScreen(Screen):
     #         callback=self.set_item,
     #         width_mult=4,
     #     )
-
 
     def set_item(self, instance):
         def set_item(interval):

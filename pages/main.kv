@@ -1,25 +1,67 @@
-#: include pages/parametersscreen.kv
-#: include pages/turningscreen.kv
-#: include pages/cuttingspeedscreen.kv
-#: include pages/knowledgescreen.kv
-#: include pages/machiningintroductionscreen.kv
-#: include pages/testscreen.kv
-#: include pages/spindlespeedscreen.kv
-#: include pages/test_01.kv
-#: include pages/test_02.kv
-#: include pages/test_03.kv
-#: include pages/grafico.kv
-#: include pages/metalremovalratescreen.kv
-#: include pages/powerrequirementscreen.kv
-#: include pages/timeincutscreen.kv
-#: include pages/millingpages/mcuttingspeed.kv
-#: include pages/millingpages/mmetalremovalrate.kv
-#: include pages/millingpages/mpowerrequirement.kv
-#: include pages/millingpages/mspindlespeed.kv
-#: include pages/millingpages/mtablefeed.kv
-#: include pages/millingpages/mtimeincut.kv
-#: include pages/millingpages/mtorque.kv
-#: include pages/millingpages/mtotalcyccletime.kv
+# home pages
+#: include pages/home/parametersscreen.kv
+#: include pages/home/knowledgescreen.kv
+#: include pages/home/testscreen.kv
+#: include pages/home/grafico.kv
+
+# parameter
+#: include pages/parameter/turningscreen.kv
+# add milling screen
+# add drilling screen
+# add tapping screen
+# add reaming screen
+# add tolerances screen
+
+# parameter -> turning pages
+#: include pages/parameter/turning/cuttingspeedscreen.kv
+#: include pages/parameter/turning/spindlespeedscreen.kv
+#: include pages/parameter/turning/metalremovalratescreen.kv
+#: include pages/parameter/turning/powerrequirementscreen.kv
+#: include pages/parameter/turning/timeincutscreen.kv
+
+# parameter -> milling pages
+#: include pages/parameter//millingpages/mcuttingspeed.kv
+#: include pages/parameter//millingpages/mmetalremovalrate.kv
+#: include pages/parameter//millingpages/mpowerrequirement.kv
+#: include pages/parameter//millingpages/mspindlespeed.kv
+#: include pages/parameter//millingpages/mtablefeed.kv
+#: include pages/parameter//millingpages/mtimeincut.kv
+#: include pages/parameter//millingpages/mtorque.kv
+#: include pages/parameter//millingpages/mtotalcyccletime.kv
+
+# parameter -> drilling pages
+# ADD !!!
+
+
+# parameter -> tapping pages
+# ADD !!!
+
+
+# parameter -> reaming pages
+# ADD !!!
+
+
+# parameter -> tolerances pages
+# ADD !!!
+
+
+# knowledge pages
+#: include pages/knowledge/machiningintroductionscreen.kv
+#ADD !!
+
+
+# test pages
+#: include pages/test/test_01.kv
+#: include pages/test/test_02.kv
+#: include pages/test/test_03.kv
+
+
+# plot
+# Add !!
+
+
+
+
 
 GridLayout:
     cols: 1
