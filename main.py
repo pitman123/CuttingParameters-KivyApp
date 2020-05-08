@@ -1,51 +1,47 @@
 # -*- coding: utf-8 -*-
 import re
 import time
-from math import pi
 import codecs
 import matplotlib.pyplot as plt
 import matplotlib
 import numpy as np
 
-from parameters import (TurningScreen,
-                        MillingScreen,
-                        DrillingScreen,
-                        TappingScreen,
-                        ReamingScreen,
-                        TolerancesScreen,
-                     )
 
+from kivymd.app import MDApp
 from kivy.garden.matplotlib import FigureCanvasKivyAgg
-
 from kivy.core.window import Window
 from kivy.lang import Builder
-from kivy.uix.floatlayout import FloatLayout
-from kivymd.uix.menu import MDDropdownMenu
-
-from kivymd.uix.button import MDRaisedButton
-
-# from kivya.kivymd.uix.button import MDFlatButton
-from kivymd.uix.textfield import MDTextField
-from kivy.uix.widget import Widget
-
-from kivymd.uix.tab import MDTabsBase
-from kivymd.app import MDApp
-from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.properties import ObjectProperty, StringProperty
 from kivy.clock import Clock
-from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelThreeLine, MDExpansionPanelOneLine
-
-from kivy.uix.boxlayout import BoxLayout
 from kivymd import images_path
+from kivy.uix.screenmanager import Screen, ScreenManager
+from kivy.uix.floatlayout import FloatLayout
+from kivymd.uix.menu import MDDropdownMenu
+from kivymd.uix.button import MDRaisedButton
+from kivymd.uix.textfield import MDTextField
+from kivy.uix.widget import Widget
+from kivymd.uix.tab import MDTabsBase
+from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelThreeLine, MDExpansionPanelOneLine
 from kivymd.uix.list import IRightBodyTouch, ILeftBody
 from kivymd.uix.selectioncontrol import MDCheckbox
 from kivymd.uix.list import IRightBodyTouch, OneLineAvatarIconListItem
 from kivymd.uix.dialog import MDDialog
+from kivy.uix.boxlayout import BoxLayout
+# from kivya.kivymd.uix.button import MDFlatButton
+
+from calculator import cuttingSpeed, spindleSpeed, metalRemovalRate, timeInCut
 
 Window.size = (350, 550)
 
 
-# home pages
+class WindowManager(ScreenManager):
+    pass
+
+
+#################################
+# Home page
+#################################
+
 class MainScreen(Screen):
     """Main screen containg ..."""
     pass
@@ -66,20 +62,88 @@ class PlotScreen(Screen):
     pass
 
 
-# Parameters pages
-TurningScreen()
-MillingScreen()
-DrillingScreen()
-TappingScreen()
-ReamingScreen()
-TolerancesScreen()
+#################################
+# All main screen from parameters
+#################################
 
-
-class TimeInScreen(Screen):
+class TurningScreen(Screen):
+    """"""
     pass
 
 
-class PowerRequirementScreen(Screen):
+class MillingScreen(Screen):
+    """"""
+    pass
+
+
+class DrillingScreen(Screen):
+    """"""
+    pass
+
+
+class TappingScreen(Screen):
+    """"""
+    pass
+
+
+class ReamingScreen(Screen):
+    """"""
+    pass
+
+
+class TolerancesScreen(Screen):
+    """"""
+    pass
+
+
+#################################
+# All main screen from turning
+#################################
+
+class MyScreen(Screen):
+    """...."""
+    score = ObjectProperty(None)
+    machined_diameter = ObjectProperty(None)
+    spindle_speed = ObjectProperty(None)
+    depth_of_cut = ObjectProperty(None)
+    feed_per_revolution = ObjectProperty(None)
+    cutting_speed = ObjectProperty(None)
+    length_of_cut = ObjectProperty(None)
+    start_diameter = ObjectProperty(None)
+
+    def __init__(self, **kw):
+        super().__init__(**kw)
+        Clock.schedule_interval(self.submit, .3)  # add Clock
+
+
+class CuttingSpeedScreen(MyScreen):
+    """...."""
+
+    def submit(self, *args):
+        if self.machined_diameter.text and self.spindle_speed.text:
+            md, ss = map(float, (self.machined_diameter.text, self.spindle_speed.text))
+            self.score.text = f'{cuttingSpeed(md, ss):.2f}'  # calculate cutting speed
+
+
+class SpindleSpeedScreen(MyScreen):
+    """..."""
+
+    def submit(self, *args):
+        if self.machined_diameter.text and self.cutting_speed.text:
+            md, cs = map(float, (self.machined_diameter.text, self.cutting_speed.text))
+            self.score.text = f'{spindleSpeed(md, cs):.2f}'  # calculate spindle speed
+
+
+class MetalRemovalRateScreen(MyScreen):
+    """..."""
+
+    def submit(self, *args):
+        if self.depth_of_cut.text and self.feed_per_revolution.text and self.cutting_speed.text:
+            doc, fpr, cs = map(float, (self.depth_of_cut.text, self.feed_per_revolution.text, self.cutting_speed.text))
+            self.score.text = f'{metalRemovalRate(doc, fpr, cs):.2f}'  # calculate metal removal rate
+
+
+class PowerRequirementScreen(MyScreen):
     # def __init__(self, **kw):
     #     super().__init__(**kw)
     #     menu_items = [90, 80, 70]
@@ -96,12 +160,21 @@ class PowerRequirementScreen(Screen):
             self.ids.field.text = instance.text
 
 
-class MetalRemovalRateScreen(Screen):
-    pass
+class TimeInScreen(MyScreen):
+    """..."""
+
+    def submit(self, *args):
+        if (self.start_diameter.text and self.cutting_speed.text and self.depth_of_cut.text
+                and self.length_of_cut.text and self.machined_diameter and self.feed_per_revolution):
+            sd, cs, soc, loc, md, fpr, = map(float, (self.start_diameter.text, self.cutting_speed.text,
+                                                     self.depth_of_cut.text, self.length_of_cut.text,
+                                                     self.machined_diameter, self.feed_per_revolution))
+            self.score.text = f'{timeInCut(sd, cs, soc, loc, md, fpr):.2f}'
 
 
-class KnowledgeScreen(Screen):
-    pass
+
+# class KnowledgeScreen(Screen):
+#     pass
 
 
 class MachiningIntroductionScreen(Screen):
@@ -114,44 +187,6 @@ class RightCheckbox(IRightBodyTouch, MDCheckbox):
     '''Custom right container.'''
 
 
-class CuttingSpeedScreen(Screen):
-    score = ObjectProperty(None)
-    machined_diameter = ObjectProperty(None)
-    spindle_speed = ObjectProperty(None)
-
-    def __init__(self, **kw):
-        super().__init__(**kw)
-        Clock.schedule_interval(self.submit, .5)
-
-    def submit(self, *args):
-        self.score.text = '0'
-        try:
-            if self.machined_diameter.text and self.spindle_speed.text:
-                score = f'{(float(self.machined_diameter.text) * float(self.spindle_speed.text) * pi) / 1000:.2f}'
-                self.score.text = score
-        except ValueError:
-            print('error')
-
-
-class SpindleSpeedScreen(Screen):
-    score = ObjectProperty(None)
-    machined_diameter = ObjectProperty(None)
-    cutting_speed = ObjectProperty(None)
-
-    def __init__(self, **kw):
-        super().__init__(**kw)
-        Clock.schedule_interval(self.submit, .5)
-
-    def submit(self, *args):
-        self.score.text = '0'
-        try:
-            if self.machined_diameter.text and self.cutting_speed.text:
-                score = f'{(float(self.cutting_speed.text) * 1000 / (float(self.machined_diameter.text) * pi)):.2f}'
-                self.score.text = score
-        except ValueError:
-            print('error')
-
-
 class MyMDTextField(MDTextField):
     pat = re.compile('[^0-9]')
 
@@ -162,10 +197,6 @@ class MyMDTextField(MDTextField):
         else:
             s = '.'.join([re.sub(pat, '', s) for s in substring.split('.', 1)])
         return super(MyMDTextField, self).insert_text(s, from_undo=from_undo)
-
-
-class WindowManager(ScreenManager):
-    pass
 
 
 class TestScreen(Screen):
