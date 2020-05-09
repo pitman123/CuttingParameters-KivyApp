@@ -6,7 +6,7 @@
 
 # parameter
 #: include pages/parameter/turningscreen.kv
-# add milling screen
+#: include pages/parameter/millingscreen.kv
 # add drilling screen
 # add tapping screen
 # add reaming screen
@@ -77,6 +77,9 @@ GridLayout:
         TurningScreen:
             name: 'turning_screen'
             id: turning_screen
+        MillingScreen:
+            name: 'milling_screen'
+            id: 'milling_screen'
         CuttingSpeedScreen:
             name: 'cutting_speed_screen'
             id: cutting_speed_screen

@@ -159,6 +159,9 @@ class PowerRequirementScreen(MyScreen):
         def set_item(interval):
             self.ids.field.text = instance.text
 
+    def submit(self, *args):
+        pass
+
 
 class TimeInScreen(MyScreen):
     """..."""
@@ -170,6 +173,40 @@ class TimeInScreen(MyScreen):
                                                      self.depth_of_cut.text, self.length_of_cut.text,
                                                      self.machined_diameter, self.feed_per_revolution))
             self.score.text = f'{timeInCut(sd, cs, soc, loc, md, fpr):.2f}'
+
+
+#################################
+# All main screen from milling
+#################################
+
+class MillingCuttingSpeedScreen(MyScreen):
+    pass
+
+
+class MillingSpindleSpeedScreen(MyScreen):
+    pass
+
+
+class MillingTableFeedScreen(MyScreen):
+    pass
+
+
+class MillingRemovalRate(MyScreen):
+    pass
+
+
+class MillingTimeInCut(MyScreen):
+    pass
+
+
+class MillingTotalCycleTime(MyScreen):
+    pass
+
+
+class MillingPowerRequirement(MyScreen):
+    pass
+
+
 
 
 
