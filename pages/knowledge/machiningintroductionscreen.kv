@@ -4,27 +4,36 @@
     size_hint: 1, None
     height: self.minimum_height
     orientation: 'vertical'
-    adaptive_height: True
+    adaptive_size: True
     padding: 3,3
+    md_bg_color: 0, 0, 0, 1
+    adaptive_width: True
 
-    MDLabel:
-
-        text: root.text
-        font_style: "Body2"
-        theme_text_color: "Secondary"
-        size_hint:  1, None
-        bg_color: 1, 1, 0
-
-        height: self.texture_size[1]
-    MDSeparator:
-        height: "2dp"
+    MDGridLayout:
+        cols: 1
+        size_hint: 1, None
+        height: self.minimum_height
 
 
-    MDLabel:
-        text: ""
-        theme_text_color: "Secondary"
-        size_hint_y: None
-        height: self.texture_size[1]
+
+
+        #adaptive_width: True
+
+        md_bg_color: 0,0,0,.05
+
+        MDLabel:
+            text: root.text
+            font_style: "Body2"
+            theme_text_color: "Secondary"
+            size_hint:  1, None
+
+
+            height: self.texture_size[1]
+        MDSeparator:
+            height: "2dp"
+
+
+
 
 
 

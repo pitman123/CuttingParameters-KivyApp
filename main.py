@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import matplotlib
 import numpy as np
 
-
 from kivymd.app import MDApp
 from kivy.garden.matplotlib import FigureCanvasKivyAgg
 from kivy.core.window import Window
@@ -100,6 +99,7 @@ class TolerancesScreen(Screen):
 # All main screen from turning
 #################################
 
+
 class MyScreen(Screen):
     """...."""
     score = ObjectProperty(None)
@@ -191,20 +191,88 @@ class MillingTableFeedScreen(MyScreen):
     pass
 
 
-class MillingRemovalRate(MyScreen):
+class MillingRemovalRateScreen(MyScreen):
     pass
 
 
-class MillingTimeInCut(MyScreen):
+class MillingTimeInCutScreen(MyScreen):
     pass
 
 
-class MillingTotalCycleTime(MyScreen):
+class MillingTotalCycleTimeScreen(MyScreen):
     pass
 
 
 class MillingPowerRequirement(MyScreen):
     pass
+
+
+#################################
+# All main screen from drilling
+################################
+
+class DrillingCuttingSpeedScreen(MyScreen):
+    pass
+
+
+class DrillingFeedForceScreen(MyScreen):
+    pass
+
+
+class DrillingFeedSpeedScreen(MyScreen):
+    pass
+
+
+class DrillingPowerRequirementScreen(MyScreen):
+    pass
+
+
+class DrillingTimeINCutScreen(MyScreen):
+    pass
+
+
+class DrillingTotalCycleTimeScreen(MyScreen):
+    pass
+
+
+#################################
+# All main screen from tapping
+################################
+
+class TappingCuttingScreen(MyScreen):
+    pass
+
+
+class TappingPenetrationRateScreen(MyScreen):
+    pass
+
+
+class TappingSpindleSpeedScreen(MyScreen):
+    pass
+
+
+class TappingTimeInCutScreen(MyScreen):
+    pass
+
+
+class TappingTotalCycleTime(MyScreen):
+    pass
+
+#################################
+# All main screen from reaming
+################################
+
+## Add !!!
+
+
+
+
+#################################
+# All main screen from knowledge
+################################
+
+
+
 
 
 
@@ -215,7 +283,7 @@ class MillingPowerRequirement(MyScreen):
 
 
 class MachiningIntroductionScreen(Screen):
-    with codecs.open("knowledge_text/itroduction.html", 'r', 'utf-8') as f:
+    with codecs.open("knowledge_text/itroduction.txt", 'r', 'utf-8') as f:
         contents = f.read()
     text = StringProperty(contents)
 
@@ -298,7 +366,7 @@ def read_text(file):
 
 
 class Content(BoxLayout):
-    contents = read_text('knowledge_text/itroduction.html')
+    contents = read_text('knowledge_text/itroduction.txt')
     text = StringProperty(contents)
 
 
@@ -419,6 +487,7 @@ class MainApp(MDApp):
                     content=dic_01[i](),
                     panel_cls=MDExpansionPanelOneLine(
                         text=i
+
 
                     )
                 )
