@@ -483,10 +483,12 @@ class MainApp(MDApp):
             self.root.ids.machining_introduction_screen.ids.box.add_widget(
                 MDExpansionPanel(
 
-                    icon="icons/pytajnik.png",
+                    icon="icons/education.png",
                     content=dic_01[i](),
+                    # color=self.theme_cls.theme_style,
                     panel_cls=MDExpansionPanelOneLine(
-                        text=i
+                        text=i,
+                        color=self.theme_cls.primary_color,
 
 
                     )
