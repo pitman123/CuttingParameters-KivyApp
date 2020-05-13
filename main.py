@@ -30,6 +30,8 @@ from kivy.uix.boxlayout import BoxLayout
 
 from calculator import cuttingSpeed, spindleSpeed, metalRemovalRate, timeInCut
 
+from knowledge import Introduction, Materials, Edge, ToolsMaterials, Usage, introduction
+
 Window.size = (350, 550)
 
 
@@ -42,12 +44,12 @@ class WindowManager(ScreenManager):
 #################################
 
 class MainScreen(Screen):
-    """Main screen containg ..."""
+    """Main screen contain ..."""
     pass
 
 
 class ParametersScreen(Screen):
-    """Screen containing pages from moduls: """
+    """Screen contain pages from moduls: """
     pass
 
 
@@ -57,7 +59,7 @@ class KnowledgeScreen(Screen):
 
 
 class PlotScreen(Screen):
-    """..."""
+    """This class include all """
     pass
 
 
@@ -113,7 +115,7 @@ class MyScreen(Screen):
 
     def __init__(self, **kw):
         super().__init__(**kw)
-        Clock.schedule_interval(self.submit, .3)  # add Clock
+        Clock.schedule_interval(self.submit, .1)  # add Clock
 
 
 class CuttingSpeedScreen(MyScreen):
@@ -123,6 +125,8 @@ class CuttingSpeedScreen(MyScreen):
         if self.machined_diameter.text and self.spindle_speed.text:
             md, ss = map(float, (self.machined_diameter.text, self.spindle_speed.text))
             self.score.text = f'{cuttingSpeed(md, ss):.2f}'  # calculate cutting speed
+        else:
+            self.score.text = '0'
 
 
 class SpindleSpeedScreen(MyScreen):
@@ -132,6 +136,8 @@ class SpindleSpeedScreen(MyScreen):
         if self.machined_diameter.text and self.cutting_speed.text:
             md, cs = map(float, (self.machined_diameter.text, self.cutting_speed.text))
             self.score.text = f'{spindleSpeed(md, cs):.2f}'  # calculate spindle speed
+        else:
+            self.score.text = '0'
 
 
 class MetalRemovalRateScreen(MyScreen):
@@ -141,6 +147,8 @@ class MetalRemovalRateScreen(MyScreen):
         if self.depth_of_cut.text and self.feed_per_revolution.text and self.cutting_speed.text:
             doc, fpr, cs = map(float, (self.depth_of_cut.text, self.feed_per_revolution.text, self.cutting_speed.text))
             self.score.text = f'{metalRemovalRate(doc, fpr, cs):.2f}'  # calculate metal removal rate
+        else:
+            self.score.text = '0'
 
 
 class PowerRequirementScreen(MyScreen):
@@ -173,6 +181,8 @@ class TimeInScreen(MyScreen):
                                                      self.depth_of_cut.text, self.length_of_cut.text,
                                                      self.machined_diameter, self.feed_per_revolution))
             self.score.text = f'{timeInCut(sd, cs, soc, loc, md, fpr):.2f}'
+        else:
+            self.score.text = '0'
 
 
 #################################
@@ -258,6 +268,7 @@ class TappingTimeInCutScreen(MyScreen):
 class TappingTotalCycleTime(MyScreen):
     pass
 
+
 #################################
 # All main screen from reaming
 ################################
@@ -265,27 +276,42 @@ class TappingTotalCycleTime(MyScreen):
 ## Add !!!
 
 
-
-
 #################################
 # All main screen from knowledge
 ################################
-
-
-
-
-
-
-
-
-# class KnowledgeScreen(Screen):
-#     pass
+def read_text(file):
+    """"""
+    with codecs.open(file, 'r', 'utf-8') as f:
+        contents = f.read()
+    return contents
 
 
 class MachiningIntroductionScreen(Screen):
-    with codecs.open("knowledge_text/itroduction.txt", 'r', 'utf-8') as f:
-        contents = f.read()
-    text = StringProperty(contents)
+    """"""
+    # dic_01 = {'Wstęp': Content, "Materiały obrabiane": Content_2, 'Krawędź Skrawająca': Content_3,
+    #            'Materiały narzedziowe': Content_4, 'Zużycie narzędzia i konserwacja': Content_5}
+    pass
+
+
+class KnowledgeTurning(Screen):
+    pass
+
+
+class KnowledgeMillingScreen(Screen):
+    pass
+
+
+class KnowledgeDrillingScreen(Screen):
+    pass
+
+
+
+
+
+
+
+
+
 
 
 class RightCheckbox(IRightBodyTouch, MDCheckbox):
@@ -357,37 +383,6 @@ class ListItemWithCheckbox(OneLineAvatarIconListItem):
     """Custom list item."""
 
     icon = StringProperty("android")
-
-
-def read_text(file):
-    with codecs.open(file, 'r', 'utf-8') as f:
-        contents = f.read()
-    return contents
-
-
-class Content(BoxLayout):
-    contents = read_text('knowledge_text/itroduction.txt')
-    text = StringProperty(contents)
-
-
-class Content_2(BoxLayout):
-    contents = read_text('knowledge_text/mateobr.txt')
-    text_01 = StringProperty(contents)
-
-    contents = read_text('knowledge_text/kindof.txt')
-    text_02 = StringProperty(contents)
-
-
-class Content_3(BoxLayout):
-    pass
-
-
-class Content_4(BoxLayout):
-    pass
-
-
-class Content_5(BoxLayout):
-    pass
 
 
 # plot
@@ -477,23 +472,7 @@ class MainApp(MDApp):
         screen_manager.transition.direction = direction
 
     def on_start(self):
-        dic_01 = {'Wstęp': Content, "Materiały obrabiane": Content_2, 'Krawędź Skrawająca': Content_3,
-                  'Materiały narzedziowe': Content_4, 'Zużycie narzędzia i konserwacja': Content_5}
-        for i in dic_01:
-            self.root.ids.machining_introduction_screen.ids.box.add_widget(
-                MDExpansionPanel(
-
-                    icon="icons/education.png",
-                    content=dic_01[i](),
-                    # color=self.theme_cls.theme_style,
-                    panel_cls=MDExpansionPanelOneLine(
-                        text=i,
-                        color=self.theme_cls.primary_color,
-
-
-                    )
-                )
-            )
+        introduction(self )
 
     #  Switch tab
     def on_tab_switch(self, instance_tabs, instance_tab, instance_tab_label, tab_text):
@@ -517,8 +496,8 @@ class MainApp(MDApp):
     #             )
     #         self.dialog.open()
 
-    def my_callback(self, text_of_selection, popup_widget):
-        print(text_of_selection)
+    # def my_callback(self, text_of_selection, popup_widget):
+    #     print(text_of_selection)
 
 
 if __name__ == "__main__":
