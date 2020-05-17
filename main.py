@@ -30,7 +30,7 @@ from kivy.uix.boxlayout import BoxLayout
 
 from calculator import cuttingSpeed, spindleSpeed, metalRemovalRate, timeInCut
 
-from knowledge import Introduction, Materials, Edge, ToolsMaterials, Usage, introduction
+from knowledge import introduction, turning, drilling, milling
 
 Window.size = (350, 550)
 
@@ -288,12 +288,10 @@ def read_text(file):
 
 class MachiningIntroductionScreen(Screen):
     """"""
-    # dic_01 = {'Wstęp': Content, "Materiały obrabiane": Content_2, 'Krawędź Skrawająca': Content_3,
-    #            'Materiały narzedziowe': Content_4, 'Zużycie narzędzia i konserwacja': Content_5}
     pass
 
 
-class KnowledgeTurning(Screen):
+class KnowledgeTurningScreen(Screen):
     pass
 
 
@@ -309,11 +307,10 @@ class KnowledgeDrillingScreen(Screen):
 
 
 
+###################################################
 
 
-
-
-
+###############################################
 class RightCheckbox(IRightBodyTouch, MDCheckbox):
     '''Custom right container.'''
 
@@ -472,7 +469,10 @@ class MainApp(MDApp):
         screen_manager.transition.direction = direction
 
     def on_start(self):
-        introduction(self )
+        introduction(self)      # start page with
+        turning(self)           # start page with
+        drilling(self)          # start page with 
+        milling(self)           # start page with
 
     #  Switch tab
     def on_tab_switch(self, instance_tabs, instance_tab, instance_tab_label, tab_text):

@@ -1,0 +1,22 @@
+<KnowledgeDrillingScreen>:
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            id: toolbar
+            title: "Knowledge"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('knowledge_screen', 'right')]]
+
+        ScrollView:
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                padding: 3, 3
+                spacing: 3
+                height: self.minimum_height
+                id: box
+
+                MDLabel:

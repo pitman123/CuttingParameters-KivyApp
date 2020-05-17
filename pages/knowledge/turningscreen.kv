@@ -1,0 +1,57 @@
+<IntroductionTurning>
+
+    size_hint: 1, None
+    height: self.minimum_height
+    orientation: 'vertical'
+    adaptive_size: True
+    padding: 3,3
+    md_bg_color: 0, 0, 0, 1
+    adaptive_width: True
+
+    MDGridLayout:
+        cols: 1
+        size_hint: 1, None
+        height: self.minimum_height
+        md_bg_color: 0,0,0, 0
+
+        MDLabel:
+            text: root.text
+            size: self.texture_size
+            font_style: "Body2"
+            theme_text_color: "Secondary"
+            size_hint:  1, None
+            halign: 'justify'
+            valign: 'middle'
+
+        MDSeparator:
+            height: "2dp"
+
+
+
+
+
+
+
+
+<KnowledgeTurningScreen>:
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            id: toolbar
+            title: "Knowledge"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('knowledge_screen', 'right')]]
+
+        ScrollView:
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                padding: 3, 3
+                spacing: 3
+                height: self.minimum_height
+                id: box
+
+                MDLabel:

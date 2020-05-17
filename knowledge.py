@@ -6,18 +6,18 @@ from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
 
 
 def read_text(file):
-    """"""
+    """..."""
     with codecs.open(file, 'r', 'utf-8') as f:
         contents = f.read()
     return contents
 
 
-class Introduction(BoxLayout):
+class IntroductionContent(BoxLayout):
     contents = read_text('knowledge_text/itroduction.txt')
     text = StringProperty(contents)
 
 
-class Materials(BoxLayout):
+class MaterialsContent(BoxLayout):
     contents = read_text('knowledge_text/mateobr.txt')
     text_01 = StringProperty(contents)
 
@@ -25,21 +25,21 @@ class Materials(BoxLayout):
     text_02 = StringProperty(contents)
 
 
-class Edge(BoxLayout):
+class EdgeContent(BoxLayout):
     pass
 
 
-class ToolsMaterials(BoxLayout):
+class ToolsMaterialsContent(BoxLayout):
     pass
 
 
-class Usage(BoxLayout):
+class UsageContent(BoxLayout):
     pass
 
 
 def introduction(self):
-    dic = {'Wstęp': Introduction, "Materiały obrabiane": Materials, 'Krawędź Skrawająca': Edge,
-              'Materiały narzedziowe': ToolsMaterials, 'Zużycie narzędzia i konserwacja': Usage}
+    dic = {'WSTĘP': IntroductionContent, "MATERIAłY OBRABIANE": MaterialsContent, 'KRAWĘDŹ SKRAWAJĄCA': EdgeContent,
+              'MATERIAŁY NARZĘDZIOWE': ToolsMaterialsContent, 'ZUŻYCIE I KONSERWACJA': UsageContent}
 
     for i in dic:
         self.root.ids.machining_introduction_screen.ids.box.add_widget(
@@ -52,13 +52,20 @@ def introduction(self):
             )
         )
 
+
+
+
+
+class IntroductionTurning(BoxLayout):
+    contents = read_text('knowledge_text/itroduction.txt')
+    text = StringProperty(contents)
 
 def turning(self):
-    dic = {'Wstęp': Introduction, "Materiały obrabiane": Materials, 'Krawędź Skrawająca': Edge,
-           'Materiały narzedziowe': ToolsMaterials, 'Zużycie narzędzia i konserwacja': Usage}
+    dic = {'WSTĘP DO TOCZENIA': IntroductionTurning, "PROCEDURY WYBORU": MaterialsContent, 'OZNACZENIA': EdgeContent,
+           'WYBÓR PŁYTEK': ToolsMaterialsContent, 'WYBÓR OPRAWEK': UsageContent}
 
     for i in dic:
-        self.root.ids.machining_introduction_screen.ids.box.add_widget(
+        self.root.ids.knowledge_turning.ids.box.add_widget(
             MDExpansionPanel(
                 icon="icons/education.png",
                 content=dic[i](),
@@ -67,11 +74,50 @@ def turning(self):
                 )
             )
         )
+
+
+
+
 
 
 def milling(self):
+    dic = {'WSTĘP DO FREZOWANIA': IntroductionContent, "PROCEDURY WYBORU": MaterialsContent, 'STOSOWANIE': EdgeContent,
+           }
+
+    for i in dic:
+        self.root.ids.knowledge_milling.ids.box.add_widget(
+            MDExpansionPanel(
+                icon="icons/education.png",
+                content=dic[i](),
+                panel_cls=MDExpansionPanelOneLine(
+                    text=i,
+                )
+            )
+        )
     pass
 
 
+
+
+
+
+
+
+
+
+
 def drilling(self):
+    dic = {'WSTĘP DO WIERCENIA': IntroductionContent, "PROCEDURY WYBORU": MaterialsContent, 'STOSOWANIE': EdgeContent,
+           'JAKOŚĆ OTWORU': ToolsMaterialsContent,}
+
+    for i in dic:
+        self.root.ids.knowledge_drilling.ids.box.add_widget(
+            MDExpansionPanel(
+                icon="icons/education.png",
+                content=dic[i](),
+                panel_cls=MDExpansionPanelOneLine(
+                    text=i,
+                )
+            )
+        )
     pass

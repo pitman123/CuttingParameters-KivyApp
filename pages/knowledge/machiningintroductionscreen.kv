@@ -1,5 +1,5 @@
 
-<Content>
+<IntroductionContent>
 
     size_hint: 1, None
     height: self.minimum_height
@@ -13,13 +13,7 @@
         cols: 1
         size_hint: 1, None
         height: self.minimum_height
-
-
-
-
-        #adaptive_width: True
-
-        md_bg_color: 0,0,0,.05
+        md_bg_color: 0,0,0, 0
 
         MDLabel:
             text: root.text
@@ -30,17 +24,11 @@
             halign: 'justify'
             valign: 'middle'
 
-
-
         MDSeparator:
             height: "2dp"
 
 
-
-
-
-
-<Content_2>
+<MaterialsContent>
     size_hint: 1, None
     height: self.minimum_height
     orientation: 'vertical'
@@ -54,6 +42,8 @@
         theme_text_color: "Secondary"
         size_hint_y: None
         height: self.texture_size[1]
+        halign: 'justify'
+        valign: 'middle'
 
     FitImage:
         source: "icons/stal.png"
@@ -67,6 +57,8 @@
         theme_text_color: "Secondary"
         size_hint_y: None
         height: self.texture_size[1]
+        halign: 'justify'
+        valign: 'middle'
 
 <Content_3>
     size_hint: 1, None
@@ -125,7 +117,7 @@
 
         MDToolbar:
             id: toolbar
-            title: "Knowlage"
+            title: "Knowledge"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('knowledge_screen', 'right')]]
 
