@@ -16,7 +16,10 @@ the university.
 - follow the instruction: `https://kivy.org/doc/stable/installation/installation-windows.html`
 - kivymd `pip install kivymd`
 
-
+### Future work
+- Add new chart settings
+- Add a new look to the test and knowledge pages
+- Add the ability to save charts
 
 ### Contribute
 ...
