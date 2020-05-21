@@ -3,8 +3,8 @@ An android application for selecting cutting parameters,
 gaining knowledge in this field, testing knowledge and
 creating a selected chart. Implemented as part of the thesis at
 the university.
+<img src="appvideo/App.gif" width="250" height="250"/>
 
-![](appvideo/App.gif | width=100)
 ##### Dependencies
 - Python 3.6+
 - Kivy
