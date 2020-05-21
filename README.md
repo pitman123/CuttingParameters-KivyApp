@@ -4,7 +4,7 @@ gaining knowledge in this field, testing knowledge and
 creating a selected chart. Implemented as part of the thesis at
 the university.
 
-![](appvideo/App.gif)
+![](appvideo/App.gif | width=100)
 ##### Dependencies
 - Python 3.6+
 - Kivy
