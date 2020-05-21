@@ -32,10 +32,27 @@ from calculator import cuttingSpeed, spindleSpeed, metalRemovalRate, timeInCut
 
 from knowledge import introduction, turning, drilling, milling
 
+##########################
+#   main set
+#########################
 Window.size = (350, 550)
 
 
+class MyMDTextField(MDTextField):
+    """MAIN SET with input value """
+    pat = re.compile('[^0-9]')
+
+    def insert_text(self, substring, from_undo=False):
+        pat = self.pat
+        if '.' in self.text:
+            s = re.sub(pat, '', substring)
+        else:
+            s = '.'.join([re.sub(pat, '', s) for s in substring.split('.', 1)])
+        return super(MyMDTextField, self).insert_text(s, from_undo=from_undo)
+
+
 class WindowManager(ScreenManager):
+    """Menager screen"""
     pass
 
 
@@ -60,6 +77,11 @@ class KnowledgeScreen(Screen):
 
 class PlotScreen(Screen):
     """This class include all """
+    pass
+
+
+class TestScreen(Screen):
+    """This is..."""
     pass
 
 
@@ -303,32 +325,12 @@ class KnowledgeDrillingScreen(Screen):
     pass
 
 
-
-
-
-
 ###################################################
 
 
 ###############################################
 class RightCheckbox(IRightBodyTouch, MDCheckbox):
     '''Custom right container.'''
-
-
-class MyMDTextField(MDTextField):
-    pat = re.compile('[^0-9]')
-
-    def insert_text(self, substring, from_undo=False):
-        pat = self.pat
-        if '.' in self.text:
-            s = re.sub(pat, '', substring)
-        else:
-            s = '.'.join([re.sub(pat, '', s) for s in substring.split('.', 1)])
-        return super(MyMDTextField, self).insert_text(s, from_undo=from_undo)
-
-
-class TestScreen(Screen):
-    pass
 
 
 class Test01Screen(Screen):
@@ -469,10 +471,10 @@ class MainApp(MDApp):
         screen_manager.transition.direction = direction
 
     def on_start(self):
-        introduction(self)      # start page with
-        turning(self)           # start page with
-        drilling(self)          # start page with 
-        milling(self)           # start page with
+        introduction(self)  # start page with
+        turning(self)  # start page with
+        drilling(self)  # start page with
+        milling(self)  # start page with
 
     #  Switch tab
     def on_tab_switch(self, instance_tabs, instance_tab, instance_tab_label, tab_text):

@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5697ed5-ad2f-46c0-bfe9-7933b0ed0379" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knowledge.py" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home/knowledgescreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/knowledgescreen.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/knowledge/drillingscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/knowledge/drillingscreen.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/knowledge/machiningintroductionscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/knowledge/machiningintroductionscreen.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/knowledge/millingscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/knowledge/millingscreen.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/knowledge/turningscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/knowledge/turningscreen.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/main.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main.kv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +29,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ToDoApp" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -137,22 +131,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588622434918" />
-    <state width="1000" height="95" key="GridCell.Tab.0.bottom" timestamp="1589740214106">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1590048193610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1000" height="95" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589740214106" />
-    <state width="1000" height="95" key="GridCell.Tab.0.center" timestamp="1589740214106">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590048193610" />
+    <state width="1515" height="29" key="GridCell.Tab.0.bottom" timestamp="1589990589430">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1000" height="95" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589740214106" />
-    <state width="1000" height="95" key="GridCell.Tab.0.left" timestamp="1589740214106">
+    <state width="1515" height="29" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589990589430" />
+    <state width="1515" height="29" key="GridCell.Tab.0.center" timestamp="1589990589430">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1000" height="95" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589740214106" />
-    <state width="1000" height="95" key="GridCell.Tab.0.right" timestamp="1589740214106">
+    <state width="1515" height="29" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589990589430" />
+    <state width="1515" height="29" key="GridCell.Tab.0.left" timestamp="1589990589430">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1000" height="95" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589740214106" />
+    <state width="1515" height="29" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589990589430" />
+    <state width="1515" height="29" key="GridCell.Tab.0.right" timestamp="1589990589430">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="29" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589990589430" />
     <state width="954" height="218" key="GridCell.Tab.1.bottom" timestamp="1589223776886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -173,10 +171,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588615195574" />
-    <state x="234" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1588954768253">
+    <state x="234" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1590047934078">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="234" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588954768253" />
+    <state x="234" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590047934078" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589395909314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
