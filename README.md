@@ -6,11 +6,8 @@ the university.
 <hr>
 <img src="appvideo/App.gif" width="250" height="400"/>
 
-<<<<<<< HEAD
-<img src="/appvideo/App.gif" width="250" height="250"/>
 
-=======
->>>>>>> 9fe3b4b030f6643ad7cbbd42edc02d74ce18f55c
+
 ##### Dependencies
 - Python 3.6+
 - Kivy
