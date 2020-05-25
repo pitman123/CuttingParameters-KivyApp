@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-import re
-import time
+"""
+The main application module, containing all classes creating individual screens.
+"""
+
 import codecs
 import matplotlib.pyplot as plt
-import matplotlib
-import numpy as np
+import re
+import time
 
 from kivymd.app import MDApp
 from kivy.garden.matplotlib import FigureCanvasKivyAgg
@@ -33,16 +35,17 @@ from calculator import cuttingSpeed, spindleSpeed, metalRemovalRate, timeInCut
 from knowledge import introduction, turning, drilling, milling
 
 ##########################
-#   main set
+#   Main set
 #########################
-Window.size = (350, 550)
+Window.size = (350, 550)  # set display screen size
 
 
 class MyMDTextField(MDTextField):
-    """MAIN SET with input value """
-    pat = re.compile('[^0-9]')
+    """Class for text field which only allow write floats and a single period."""
+    pat = re.compile('[^0-9]')  # allow write floats (0-9)
 
     def insert_text(self, substring, from_undo=False):
+        """Input text formatting function."""
         pat = self.pat
         if '.' in self.text:
             s = re.sub(pat, '', substring)
@@ -52,42 +55,42 @@ class MyMDTextField(MDTextField):
 
 
 class WindowManager(ScreenManager):
-    """Menager screen"""
+    """Class manage all screens of applications. """
     pass
 
 
-#################################
-# Home page
-#################################
+########################################
+#  The first screen of the application
+########################################
 
 class MainScreen(Screen):
-    """Main screen contain ..."""
+    """The main application screen class containing the basic functions."""
     pass
 
 
 class ParametersScreen(Screen):
-    """Screen contain pages from moduls: """
+    """The main screen containing various types of cutting."""
     pass
 
 
 class KnowledgeScreen(Screen):
-    """..."""
+    """The main screen containing individual chapters related to cutting knowledge."""
     pass
 
 
 class PlotScreen(Screen):
-    """This class include all """
+    """The main screen for choosing the type of graph comparing individual cutting parameters."""
     pass
 
 
 class TestScreen(Screen):
-    """This is..."""
+    """The main screen containing all test about cutting knowledge."""
     pass
 
 
-#################################
+########################################
 # All main screen from parameters
-#################################
+########################################
 
 class TurningScreen(Screen):
     """"""
@@ -119,13 +122,13 @@ class TolerancesScreen(Screen):
     pass
 
 
-#################################
+########################################
 # All main screen from turning
-#################################
+########################################
 
 
 class MyScreen(Screen):
-    """...."""
+    """Class for all screen containing calculation of parameters."""
     score = ObjectProperty(None)
     machined_diameter = ObjectProperty(None)
     spindle_speed = ObjectProperty(None)
@@ -137,43 +140,70 @@ class MyScreen(Screen):
 
     def __init__(self, **kw):
         super().__init__(**kw)
-        Clock.schedule_interval(self.submit, .1)  # add Clock
+        # add Clock function to MyScreen class
+        # submit - calculating function the cutting parameter
+        Clock.schedule_interval(self.submit, .1)
+
+    @staticmethod
+    def input_text_service(*args):
+        """Method that changes text type to float"""
+        value = list(map(float, args))  # give a list of values
+
+        return value
 
 
 class CuttingSpeedScreen(MyScreen):
-    """...."""
+    """Class represents the screen for calculating the cutting speed in turning."""
 
     def submit(self, *args):
+        """
+        The method processes the given data and calls the functions for calculating the cutting speed.
+        """
         if self.machined_diameter.text and self.spindle_speed.text:
-            md, ss = map(float, (self.machined_diameter.text, self.spindle_speed.text))
-            self.score.text = f'{cuttingSpeed(md, ss):.2f}'  # calculate cutting speed
+            # use the static method and change value
+            md, ss = MyScreen.input_text_service(self.machined_diameter.text, self.spindle_speed.text)
+            # call functions to calculate cutting speed and get the result
+            self.score.text = f'{cuttingSpeed(md, ss):.2f}'
         else:
             self.score.text = '0'
 
 
 class SpindleSpeedScreen(MyScreen):
-    """..."""
+    """Class represents the screen for calculating the spindle speed in turning."""
 
     def submit(self, *args):
+        """
+        The method processes the given data and calls the functions for calculating the spindle speed.
+        """
         if self.machined_diameter.text and self.cutting_speed.text:
-            md, cs = map(float, (self.machined_diameter.text, self.cutting_speed.text))
-            self.score.text = f'{spindleSpeed(md, cs):.2f}'  # calculate spindle speed
+            # use the static method and change value
+            md, cs = MyScreen.input_text_service(self.machined_diameter.text, self.cutting_speed.text)
+            # call functions to calculate spindle speed and get the result
+            self.score.text = f'{spindleSpeed(md, cs):.2f}'
         else:
             self.score.text = '0'
 
 
 class MetalRemovalRateScreen(MyScreen):
-    """..."""
+    """Class represents the screen for calculating the metal removal rate in turning."""
 
     def submit(self, *args):
+        """
+        The method processes the given data and calls the functions for calculating the metal removal rate.
+        """
         if self.depth_of_cut.text and self.feed_per_revolution.text and self.cutting_speed.text:
-            doc, fpr, cs = map(float, (self.depth_of_cut.text, self.feed_per_revolution.text, self.cutting_speed.text))
-            self.score.text = f'{metalRemovalRate(doc, fpr, cs):.2f}'  # calculate metal removal rate
+            # use the static method and change value
+            doc, fpr, cs = MyScreen.input_text_service(self.depth_of_cut.text,
+                                                       self.feed_per_revolution.text,
+                                                       self.cutting_speed.text, )
+            # call functions to calculate metal removal rate and get the result
+            self.score.text = f'{metalRemovalRate(doc, fpr, cs):.2f}'
         else:
             self.score.text = '0'
 
 
 class PowerRequirementScreen(MyScreen):
+    """Class represents the screen for calculating the power requirement in turning."""
     # def __init__(self, **kw):
     #     super().__init__(**kw)
     #     menu_items = [90, 80, 70]
@@ -186,22 +216,32 @@ class PowerRequirementScreen(MyScreen):
     #     )
 
     def set_item(self, instance):
+        """..."""
         def set_item(interval):
             self.ids.field.text = instance.text
 
     def submit(self, *args):
+        """...."""
         pass
 
 
 class TimeInScreen(MyScreen):
-    """..."""
+    """Class represents the screen for calculating the time in cut in turning."""
 
     def submit(self, *args):
+        """
+        The method processes the given data and calls the functions for calculating the time in cut.
+        """
         if (self.start_diameter.text and self.cutting_speed.text and self.depth_of_cut.text
                 and self.length_of_cut.text and self.machined_diameter and self.feed_per_revolution):
-            sd, cs, soc, loc, md, fpr, = map(float, (self.start_diameter.text, self.cutting_speed.text,
-                                                     self.depth_of_cut.text, self.length_of_cut.text,
-                                                     self.machined_diameter, self.feed_per_revolution))
+            # use the static method and change value
+            sd, cs, soc, loc, md, fpr, = MyScreen.input_text_service(self.start_diameter.text,
+                                                                     self.cutting_speed.text,
+                                                                     self.depth_of_cut.text,
+                                                                     self.length_of_cut.text,
+                                                                     self.machined_diameter,
+                                                                     self.feed_per_revolution,)
+            # call functions to calculate time in cut and get the result
             self.score.text = f'{timeInCut(sd, cs, soc, loc, md, fpr):.2f}'
         else:
             self.score.text = '0'
@@ -471,10 +511,13 @@ class MainApp(MDApp):
         screen_manager.transition.direction = direction
 
     def on_start(self):
-        introduction(self)  # start page with
-        turning(self)  # start page with
-        drilling(self)  # start page with
-        milling(self)  # start page with
+        """"""
+
+        # start all knowledge screens
+        introduction(self)
+        turning(self)
+        drilling(self)
+        milling(self)
 
     #  Switch tab
     def on_tab_switch(self, instance_tabs, instance_tab, instance_tab_label, tab_text):
