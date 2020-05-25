@@ -8,13 +8,6 @@
 
     BoxLayout:
         orientation: "vertical"
-        canvas:
-            Color:
-                rgb: 204, 224, 255
-            Rectangle:
-                size: self.size
-
-
 
         MDToolbar:
             id: toolbar
@@ -23,28 +16,37 @@
             left_action_items: [["arrow-left", lambda x: app.change_screen('test_screen', 'right')]]
             right_action_items: [['bell-check', lambda x: root.on_checkbox_active()]]
 
-
-        GridLayout:
+        MDGridLayout:
             cols: 1
-            padding: 3, 3
+            padding: 3, 4
+            spacing: 2
+
 
             ScrollView:
+                spacing: 2
 
                 MDList:
-                    spacing: 1
+                    spacing: 2
                     MDLabel:
-                        text: '1. Ktory z trzech glownych parametrow obrobki ma najwiekszy wplyw na trwalosc ostrza ?'
-
+                        text: '1). Ktory z trzech glownych parametrow obrobki ma najwiekszy wplyw na trwalosc ostrza ?'
+                        md_bg_color: app.theme_cls.primary_color
                         font_style: "Body2"
                         text_size: self.width, None
                         size_hint: 1, None
+                        halign: "center"
                         user_font_size: "30sp"
                         height: self.texture_size[1]
+                        theme_text_color: "Primary"
+                        theme_text_color: "Custom"
+
+                    MDSeparator:
+                        height: "2dp"
+                        rgba: 0.7, 0.7, 0.7, 1
+                        md_bg_color: app.theme_cls.primary_color
 
                     ListItemWithCheckbox:
                         text: 'Glebokosc skrawania'
-                        bg_color: 'Body 1'
-                        bg_color: 1, 1, 0
+
                         font_style: "Caption"
                         text_size: self.size
                         IconLeftWidget:
@@ -53,11 +55,12 @@
                         RightCheckbox:
                             id: a
                             size: dp(35), dp(35)
+
+
 
                     ListItemWithCheckbox:
                         text: 'Posuw'
-                        bg_color: 'Custom'
-                        bg_color: 1, 1, 0
+                        md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
                         IconLeftWidget:
@@ -67,33 +70,40 @@
                             id: b
                             name: 'b'
                             size: dp(35), dp(35)
+
 
                     ListItemWithCheckbox:
                         text: 'Predkosc skrawania'
-                        bg_color: 'Custom'
-                        bg_color: 1, 1, 0
+                        md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
                         IconLeftWidget:
                             icon: "alpha-c-circle"
 
-
                         RightCheckbox:
                             id: c
                             size: dp(35), dp(35)
-                    MDLabel:
-                        text: '2. Jakie jest oznaczenie wg ISO pokrywanych plytek weglikowych?'
 
+
+
+                    MDLabel:
+                        text: '2). Jakie jest oznaczenie wg ISO pokrywanych plytek weglikowych?'
+                        halign: "center"
                         font_style: "Body2"
                         text_size: self.width, None
                         size_hint: 1, None
                         user_font_size: "30sp"
                         height: self.texture_size[1]
+                        halign: "center"
+
+                    MDSeparator:
+                        height: "2dp"
+
 
                     ListItemWithCheckbox:
                         text: 'HC'
-                        bg_color: 'Body 1'
-                        bg_color: 1, 1, 0
+
+                        md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
                         IconLeftWidget:
@@ -103,10 +113,11 @@
                             id: a
                             size: dp(35), dp(35)
 
+
                     ListItemWithCheckbox:
                         text: 'CC'
-                        bg_color: 'Custom'
-                        bg_color: 1, 1, 0
+
+                        md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
                         IconLeftWidget:
@@ -117,10 +128,12 @@
                             name: 'b'
                             size: dp(35), dp(35)
 
+
+
                     ListItemWithCheckbox:
                         text: 'PD'
-                        bg_color: 'Custom'
-                        bg_color: 1, 1, 0
+
+                        md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
                         IconLeftWidget:
@@ -131,19 +144,25 @@
                             id: c
                             size: dp(35), dp(35)
 
+
+
                     MDLabel:
-                        text: '3. Jakie sa dwie glowne metody pokrywania plytek weglikowych?'
+                        text: '3). Jakie sa dwie glowne metody pokrywania plytek weglikowych?'
 
                         font_style: "Body2"
                         text_size: self.width, None
                         size_hint: 1, None
                         user_font_size: "30sp"
                         height: self.texture_size[1]
+                        halign: "center"
+
+                    MDSeparator:
+                        height: "2dp"
 
                     ListItemWithCheckbox:
                         text: 'AVD'
-                        bg_color: 'Body 1'
-                        bg_color: 1, 1, 0
+
+                        md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
                         IconLeftWidget:
@@ -153,10 +172,12 @@
                             id: a
                             size: dp(35), dp(35)
 
+
+
                     ListItemWithCheckbox:
                         text: 'CVD'
-                        bg_color: 'Custom'
-                        bg_color: 1, 1, 0
+
+                        md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
                         IconLeftWidget:
@@ -167,10 +188,12 @@
                             name: 'b'
                             size: dp(35), dp(35)
 
+
+
                     ListItemWithCheckbox:
                         text: 'CBN'
-                        bg_color: 'Custom'
-                        bg_color: 1, 1, 0
+
+                        md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
                         IconLeftWidget:
@@ -180,6 +203,69 @@
                         RightCheckbox:
                             id: c
                             size: dp(35), dp(35)
+
+
+
+                    MDLabel:
+                        text: '4). Jaka jest definicja wartosci oporu wlasciwego skrawania??'
+
+                        font_style: "Body2"
+                        text_size: self.width, None
+                        size_hint: 1, None
+                        user_font_size: "30sp"
+                        height: self.texture_size[1]
+                        halign: "center"
+
+                    MDSeparator:
+                        height: "2dp"
+
+                    ListItemWithCheckbox:
+                        text: 'Maksymalna grubosc wiorow'
+
+                        md_bg_color: 0, 0, 0
+                        font_style: "Caption"
+                        text_size: self.size
+                        IconLeftWidget:
+                            icon: "alpha-a-circle"
+
+                        RightCheckbox:
+                            id: a
+                            size: dp(35), dp(35)
+
+
+
+                    ListItemWithCheckbox:
+                        text: 'Wspolczynnik korekcji'
+
+                        md_bg_color: 0, 0, 0
+                        font_style: "Caption"
+                        text_size: self.size
+                        IconLeftWidget:
+                            icon: "alpha-b-circle"
+
+                        RightCheckbox:
+                            id: b
+                            name: 'b'
+                            size: dp(35), dp(35)
+
+
+
+                    ListItemWithCheckbox:
+                        text: 'Sila posuwowa'
+
+                        md_bg_color: 0, 0, 0
+                        font_style: "Caption"
+                        text_size: self.size
+                        IconLeftWidget:
+                            icon: "alpha-c-circle"
+
+
+                        RightCheckbox:
+                            id: c
+                            size: dp(35), dp(35)
+
+
+
 
 
 
