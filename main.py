@@ -122,9 +122,10 @@ class TolerancesScreen(Screen):
     pass
 
 
-########################################
+##############################################
 # All main screen from turning
-########################################
+# All calculate function-> calculator.py
+##############################################
 
 
 class MyScreen(Screen):
@@ -248,7 +249,7 @@ class TimeInScreen(MyScreen):
 
 
 #################################
-# All main screen from milling
+# All main screen from milling, Add!!!
 #################################
 
 class MillingCuttingSpeedScreen(MyScreen):
@@ -280,7 +281,7 @@ class MillingPowerRequirement(MyScreen):
 
 
 #################################
-# All main screen from drilling
+# All main screen from drilling, Add!!
 ################################
 
 class DrillingCuttingSpeedScreen(MyScreen):
@@ -308,7 +309,7 @@ class DrillingTotalCycleTimeScreen(MyScreen):
 
 
 #################################
-# All main screen from tapping
+# All main screen from tapping, Add!!
 ################################
 
 class TappingCuttingScreen(MyScreen):
@@ -331,44 +332,41 @@ class TappingTotalCycleTime(MyScreen):
     pass
 
 
-#################################
-# All main screen from reaming
-################################
+################################################
+# All main screen from reaming, Add!!
+################################################
 
-## Add !!!
+# Add !!!
 
 
-#################################
+################################################
 # All main screen from knowledge
-################################
-def read_text(file):
-    """"""
-    with codecs.open(file, 'r', 'utf-8') as f:
-        contents = f.read()
-    return contents
-
+# All content from this screens->knowledge.py
+################################################
 
 class MachiningIntroductionScreen(Screen):
-    """"""
+    """Class represents the screen with basic knowledge of cutting parameters."""
     pass
 
 
 class KnowledgeTurningScreen(Screen):
+    """Class represents the screen with basic knowledge of turning."""
     pass
 
 
 class KnowledgeMillingScreen(Screen):
+    """Class represents the screen with basic knowledge of milling."""
     pass
 
 
 class KnowledgeDrillingScreen(Screen):
+    """Class represents the screen with basic knowledge of drilling."""
     pass
 
 
 ###################################################
-
-
-###############################################
+# All main screen from test
+###################################################
 class RightCheckbox(IRightBodyTouch, MDCheckbox):
     '''Custom right container.'''
 

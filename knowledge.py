@@ -1,3 +1,8 @@
+"""
+The knowledge module, containing all classes and method which build part of the application containing information
+about cutting parameters, turning, milling, drilling.
+"""
+
 import codecs
 
 from kivy.properties import StringProperty
@@ -6,11 +11,15 @@ from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
 
 
 def read_text(file):
-    """..."""
+    """Method allow read and output with utf-8 encoding """
     with codecs.open(file, 'r', 'utf-8') as f:
         contents = f.read()
     return contents
 
+
+####################################################################
+#  All classes representing the introduction to cutting parameters
+####################################################################
 
 class IntroductionContent(BoxLayout):
     contents = read_text('knowledge_text/itroduction.txt')
@@ -37,9 +46,35 @@ class UsageContent(BoxLayout):
     pass
 
 
+####################################################################
+#  All classes representing the turning
+####################################################################
+
+class IntroductionTurning(BoxLayout):
+    contents = read_text('knowledge_text/itroduction.txt')
+    text = StringProperty(contents)
+
+
+####################################################################
+#  All classes representing the milling
+####################################################################
+
+# Add!!!
+
+####################################################################
+#  All classes representing the drilling
+####################################################################
+
+# Add!!!
+
+
+######################################################################
+# All content from introduction to cutting parameters
+######################################################################
+
 def introduction(self):
     dic = {'WSTĘP': IntroductionContent, "MATERIAłY OBRABIANE": MaterialsContent, 'KRAWĘDŹ SKRAWAJĄCA': EdgeContent,
-              'MATERIAŁY NARZĘDZIOWE': ToolsMaterialsContent, 'ZUŻYCIE I KONSERWACJA': UsageContent}
+           'MATERIAŁY NARZĘDZIOWE': ToolsMaterialsContent, 'ZUŻYCIE I KONSERWACJA': UsageContent}
 
     for i in dic:
         self.root.ids.machining_introduction_screen.ids.box.add_widget(
@@ -52,13 +87,6 @@ def introduction(self):
             )
         )
 
-
-
-
-
-class IntroductionTurning(BoxLayout):
-    contents = read_text('knowledge_text/itroduction.txt')
-    text = StringProperty(contents)
 
 def turning(self):
     dic = {'WSTĘP DO TOCZENIA': IntroductionTurning, "PROCEDURY WYBORU": MaterialsContent, 'OZNACZENIA': EdgeContent,
@@ -76,10 +104,6 @@ def turning(self):
         )
 
 
-
-
-
-
 def milling(self):
     dic = {'WSTĘP DO FREZOWANIA': IntroductionContent, "PROCEDURY WYBORU": MaterialsContent, 'STOSOWANIE': EdgeContent,
            }
@@ -94,21 +118,11 @@ def milling(self):
                 )
             )
         )
-    pass
-
-
-
-
-
-
-
-
-
 
 
 def drilling(self):
     dic = {'WSTĘP DO WIERCENIA': IntroductionContent, "PROCEDURY WYBORU": MaterialsContent, 'STOSOWANIE': EdgeContent,
-           'JAKOŚĆ OTWORU': ToolsMaterialsContent,}
+           'JAKOŚĆ OTWORU': ToolsMaterialsContent, }
 
     for i in dic:
         self.root.ids.knowledge_drilling.ids.box.add_widget(
@@ -120,4 +134,21 @@ def drilling(self):
                 )
             )
         )
-    pass
+
+######################################################################
+# All content from turning
+######################################################################
+
+# Add!!!
+
+######################################################################
+# All content from milling
+######################################################################
+
+# Add!!
+
+######################################################################
+# All content from drilling
+######################################################################
+
+# Add!!
