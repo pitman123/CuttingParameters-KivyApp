@@ -4,7 +4,7 @@ gaining knowledge in this field, testing knowledge and
 creating a selected chart. Implemented as part of the thesis at
 the university.
 <hr>
-<img src="appvideo/App.gif" width="250" height="400"/>
+<img src="appvideo/Appv.gif" width="250" height="400"/>
 
 
 

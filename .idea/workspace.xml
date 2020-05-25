@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5697ed5-ad2f-46c0-bfe9-7933b0ed0379" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/test/test_01.kv" beforeDir="false" afterPath="$PROJECT_DIR$/pages/test/test_01.kv" afterDir="false" />
-    </list>
+    <list default="true" id="c5697ed5-ad2f-46c0-bfe9-7933b0ed0379" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,16 +29,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\appvideo" />
+      <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\icons" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\appvideo" />
       <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\pages\test" />
       <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\pages\konwolage" />
       <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\pages\parameter" />
       <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\pages\parameter\turning" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\appvideo" />
-      <recent name="C:\Users\piotr\Desktop\CuttingParameters-KivyApp\icons" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
