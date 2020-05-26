@@ -23,6 +23,12 @@
             size_hint:  1, None
             halign: 'justify'
             valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: hex('#ebf8ff')
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
 
         MDSeparator:
             height: "2dp"

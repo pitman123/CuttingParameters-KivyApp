@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#:import hex kivy.utils.get_color_from_hex
 <Test01Screen>:
     id: test_01
     name: "test_01"
@@ -18,37 +19,44 @@
 
         MDGridLayout:
             cols: 1
-            padding: 3, 4
-            spacing: 2
-
+            padding: 1,1
 
             ScrollView:
-                spacing: 2
 
                 MDList:
-                    spacing: 2
+                    padding: 1,1
+
+
+
                     MDLabel:
-                        text: '1). Ktory z trzech glownych parametrow obrobki ma najwiekszy wplyw na trwalosc ostrza ?'
-                        md_bg_color: app.theme_cls.primary_color
-                        font_style: "Body2"
+                        padding: 5,5
+                        text: '1. Ktory z trzech glownych parametrow obrobki ma najwiekszy wplyw na trwalosc ostrza ?'
+
+                        font_style: "Caption"
                         text_size: self.width, None
                         size_hint: 1, None
-                        halign: "center"
+                        theme_text_color: "Primary"
+                        text_color: app.theme_cls.primary_color
+
                         user_font_size: "30sp"
                         height: self.texture_size[1]
-                        theme_text_color: "Primary"
-                        theme_text_color: "Custom"
-
+                        canvas.before:
+                            Color:
+                                rgba: hex('#d2ebf7')
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
                     MDSeparator:
-                        height: "2dp"
-                        rgba: 0.7, 0.7, 0.7, 1
-                        md_bg_color: app.theme_cls.primary_color
+                        height:
+
+
 
                     ListItemWithCheckbox:
                         text: 'Glebokosc skrawania'
 
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-a-circle"
 
@@ -57,12 +65,12 @@
                             size: dp(35), dp(35)
 
 
-
                     ListItemWithCheckbox:
                         text: 'Posuw'
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-b-circle"
 
@@ -77,6 +85,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-c-circle"
 
@@ -86,18 +95,27 @@
 
 
 
+
+
                     MDLabel:
-                        text: '2). Jakie jest oznaczenie wg ISO pokrywanych plytek weglikowych?'
-                        halign: "center"
-                        font_style: "Body2"
+                        padding: 5,5
+                        text: '2. Jakie jest oznaczenie wg ISO pokrywanych plytek weglikowych?'
+
+                        font_style: "Caption"
                         text_size: self.width, None
                         size_hint: 1, None
                         user_font_size: "30sp"
                         height: self.texture_size[1]
-                        halign: "center"
 
-                    MDSeparator:
-                        height: "2dp"
+
+                        canvas.before:
+                            Color:
+                                rgba: hex('#d2ebf7')
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+
+
 
 
                     ListItemWithCheckbox:
@@ -106,6 +124,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-a-circle"
 
@@ -120,6 +139,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-b-circle"
 
@@ -136,6 +156,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-c-circle"
 
@@ -147,17 +168,23 @@
 
 
                     MDLabel:
-                        text: '3). Jakie sa dwie glowne metody pokrywania plytek weglikowych?'
+                        padding: 5,5
+                        text: '3. Jakie sa dwie glowne metody pokrywania plytek weglikowych?'
 
-                        font_style: "Body2"
+                        font_style: "Caption"
                         text_size: self.width, None
                         size_hint: 1, None
                         user_font_size: "30sp"
                         height: self.texture_size[1]
-                        halign: "center"
 
-                    MDSeparator:
-                        height: "2dp"
+                        canvas.before:
+                            Color:
+                                rgba: hex('#d2ebf7')
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+
+
 
                     ListItemWithCheckbox:
                         text: 'AVD'
@@ -165,6 +192,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-a-circle"
 
@@ -180,6 +208,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-b-circle"
 
@@ -196,6 +225,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-c-circle"
 
@@ -206,18 +236,25 @@
 
 
 
-                    MDLabel:
-                        text: '4). Jaka jest definicja wartosci oporu wlasciwego skrawania??'
 
-                        font_style: "Body2"
+                    MDLabel:
+                        padding: 5,5
+                        text: '4. Jaka jest definicja wartosci oporu wlasciwego skrawania?'
+
+                        font_style: "Caption"
                         text_size: self.width, None
                         size_hint: 1, None
                         user_font_size: "30sp"
                         height: self.texture_size[1]
-                        halign: "center"
 
-                    MDSeparator:
-                        height: "2dp"
+                        canvas.before:
+                            Color:
+                                rgba: hex('#d2ebf7')
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+
+
 
                     ListItemWithCheckbox:
                         text: 'Maksymalna grubosc wiorow'
@@ -225,6 +262,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-a-circle"
 
@@ -240,6 +278,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-b-circle"
 
@@ -256,6 +295,7 @@
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
+                        height: "42dp"
                         IconLeftWidget:
                             icon: "alpha-c-circle"
 

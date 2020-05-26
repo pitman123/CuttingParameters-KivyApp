@@ -8,6 +8,7 @@ import codecs
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
+from kivymd.font_definitions import theme_font_styles
 
 
 def read_text(file):
@@ -72,6 +73,9 @@ class IntroductionTurning(BoxLayout):
 # All content from introduction to cutting parameters
 ######################################################################
 
+
+
+
 def introduction(self):
     dic = {'WSTĘP': IntroductionContent, "MATERIAłY OBRABIANE": MaterialsContent, 'KRAWĘDŹ SKRAWAJĄCA': EdgeContent,
            'MATERIAŁY NARZĘDZIOWE': ToolsMaterialsContent, 'ZUŻYCIE I KONSERWACJA': UsageContent}
@@ -83,6 +87,9 @@ def introduction(self):
                 content=dic[i](),
                 panel_cls=MDExpansionPanelOneLine(
                     text=i,
+                    font_style=theme_font_styles[9]
+
+
                 )
             )
         )
@@ -99,6 +106,7 @@ def turning(self):
                 content=dic[i](),
                 panel_cls=MDExpansionPanelOneLine(
                     text=i,
+                    font_style=theme_font_styles[9]
                 )
             )
         )
@@ -115,6 +123,7 @@ def milling(self):
                 content=dic[i](),
                 panel_cls=MDExpansionPanelOneLine(
                     text=i,
+                    font_style=theme_font_styles[9]
                 )
             )
         )
@@ -129,8 +138,12 @@ def drilling(self):
             MDExpansionPanel(
                 icon="icons/education.png",
                 content=dic[i](),
+
                 panel_cls=MDExpansionPanelOneLine(
                     text=i,
+                    font_style=theme_font_styles[9],
+
+
                 )
             )
         )
