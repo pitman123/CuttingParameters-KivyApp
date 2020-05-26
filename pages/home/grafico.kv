@@ -1,3 +1,5 @@
+#:import C kivy.utils.get_color_from_hex
+
 <Grafico>:
     id: grafico
     name: 'grafico'
@@ -77,15 +79,18 @@
                     font_style: "Caption"
 
             BoxLayout:
-
+                spacing:1.5
                 height:25
                 width: 344
                 size_hint: (None, None)
                 orientation: 'horizontal'
 
                 TextInput:
+
                     id: Vc_01
                     font_size: sp(10)
+                    background_color: 0,0,0,0
+               
                 TextInput:
                     id: Vf_01
                     font_size: sp(10)
@@ -97,7 +102,7 @@
                     id: Ra_01
                     font_size: sp(10)
             BoxLayout:
-
+                spacing:1.5
                 height: 25
                 width: 344
                 size_hint: (None, None)
@@ -106,6 +111,7 @@
                 TextInput:
                     id: Vc_02
                     font_size: sp(10)
+
                 TextInput:
                     id: Vf_02
                     font_size: sp(10)
@@ -117,7 +123,7 @@
                     id: Ra_02
                     font_size: sp(10)
             BoxLayout:
-
+                spacing:1.5
                 height: 25
                 width: 344
                 size_hint: (None, None)
@@ -134,7 +140,7 @@
                 TextInput:
                     font_size: sp(10)
             BoxLayout:
-
+                spacing:1.5
                 height: 25
                 width: 344
                 size_hint: (None, None)
@@ -151,14 +157,13 @@
                 TextInput:
                     font_size: sp(10)
             BoxLayout:
-
+                spacing:1.5
                 height: 25
                 width: 344
                 size_hint: (None, None)
                 orientation: 'horizontal'
 
                 TextInput:
-
                     font_size: sp(10)
                 TextInput:
 
@@ -173,7 +178,7 @@
 
             MDFlatButton:
                 text: "Create"
-                increment_width: "312dp"
+                increment_width: "302dp"
                 text_color: 1, 1, 1, 1
                 md_bg_color: app.theme_cls.primary_color
                 halign: "center"
