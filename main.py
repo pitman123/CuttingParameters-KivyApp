@@ -29,6 +29,8 @@ from kivymd.uix.list import IRightBodyTouch, OneLineAvatarIconListItem
 from kivymd.uix.dialog import MDDialog
 from kivy.uix.boxlayout import BoxLayout
 # from kivya.kivymd.uix.button import MDFlatButton
+from kivymd.uix.dropdownitem import MDDropDownItem
+from kivymd.uix.list import IRightBodyTouch
 
 from calculator import cuttingSpeed, spindleSpeed, metalRemovalRate, timeInCut
 
@@ -139,8 +141,8 @@ class MyScreen(Screen):
     length_of_cut = ObjectProperty(None)
     start_diameter = ObjectProperty(None)
 
-    def __init__(self, **kw):
-        super().__init__(**kw)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         # add Clock function to MyScreen class
         # submit - calculating function the cutting parameter
         Clock.schedule_interval(self.submit, .1)
@@ -202,28 +204,73 @@ class MetalRemovalRateScreen(MyScreen):
         else:
             self.score.text = '0'
 
+from kivymd.uix.list import OneLineAvatarIconListItem
+
+
+class ItemConfirm(OneLineAvatarIconListItem):
+    divider = None
+    check = ObjectProperty(None)
+
+    def set_icon(self, instance_check):
+        instance_check.active = True
+        check_list = instance_check.get_widgets(instance_check.group)
+        for check in check_list:
+            if check != instance_check:
+                check.active = False
+
+
+class MyMDRaisedButton(MDRaisedButton):
+
+    pass
+
 
 class PowerRequirementScreen(MyScreen):
     """Class represents the screen for calculating the power requirement in turning."""
-    # def __init__(self, **kw):
-    #     super().__init__(**kw)
-    #     menu_items = [90, 80, 70]
-    #     self.menu = MDDropdownMenu(
-    #         caller=self.ids.field,
-    #         items=menu_items,
-    #         position='bottom',
-    #         callback=self.set_item,
-    #         width_mult=4,
-    #     )
+    field = ObjectProperty(None)
+    check = ObjectProperty(None)
 
-    def set_item(self, instance):
-        """..."""
-        def set_item(interval):
-            self.ids.field.text = instance.text
+    def on_checkbox_active(self):
+
+        self.show_MDDialog("5")
+
+    def show_MDDialog(self, result):
+        dialog = MDDialog(
+            title="Phone ringtone",
+            type="confirmation",
+            size_hint=[.8, .8],
+            items=[
+                ItemConfirm(text="90"),
+                ItemConfirm(text="80"),
+                ItemConfirm(text="70"),
+                ItemConfirm(text="60"),
+                ItemConfirm(text="50"),
+                ItemConfirm(text="40"),
+                ItemConfirm(text="30"),
+                ItemConfirm(text="20"),
+                ItemConfirm(text="10"),
+                ItemConfirm(text="5"),
+                ItemConfirm(text="0"),
+            ],
+            buttons=[
+                MyMDRaisedButton(),
+            ],
+        )
+        dialog.open()
 
     def submit(self, *args):
-        """...."""
         pass
+
+    # def set_value(self, instance):
+    #     def set_value(interval):
+    #         if instance:
+    #
+    #             self.field.text = instance
+    #         else:
+    #             self.field.text = '0'
+    #
+    #     Clock.schedule_once(set_value, 0.5)
+
+
 
 
 class TimeInScreen(MyScreen):
@@ -369,6 +416,11 @@ class KnowledgeDrillingScreen(Screen):
 ###################################################
 class RightCheckbox(IRightBodyTouch, MDCheckbox):
     '''Custom right container.'''
+    pass
+
+
+class TestMDRaisedButton(MDRaisedButton):
+    pass
 
 
 class Test01Screen(Screen):
@@ -394,10 +446,10 @@ class Test01Screen(Screen):
             auto_dismiss=True,
 
             buttons=[
-                MDRaisedButton(text='OK'),
+                TestMDRaisedButton(text='OK'),
             ],
         )
-        dialog.open()
+        self.dialog.open()
 
 
 class Test02Screen(Screen):
@@ -491,16 +543,36 @@ class MainApp(MDApp):
     dialog = None
 
     def __init__(self, **kwargs):
+
         self.title = "App - Cutting Parameters"
         super().__init__(**kwargs)
+
+        with codecs.open("pages/main.kv", 'r', encoding='utf-8') as f:
+            self.root = Builder.load_string(f.read())
+
         self.theme_cls.theme_style = "Light"
         self.a = 0
         self.b = 0
         self.c = 0
+        menu_items = [{"text": f"Item {i}"} for i in range(5)]
+        self.menu = MDDropdownMenu(
+            caller=self.root.ids.power_requirement_screen.ids.field,
+            # self.root.ids.machining_introduction_screen.ids.box.add_widget
+            items=menu_items,
+            position="auto",
+            callback=self.set_item,
+            width_mult=4,
+        )
+
+    def set_item(self, instance):
+        def set_item(interval):
+            self.root.ids.power_requirement_screen.ids.field.text = instance.text
+
+        Clock.schedule_once(set_item, 0.5)
 
     def build(self):
-        with codecs.open("pages/main.kv", 'r', encoding='utf-8') as f:
-            self.root = Builder.load_string(f.read())
+        return self.root
+
 
     def change_screen(self, screen_name, direction):
         # Get the window manager from the kv file
@@ -541,7 +613,10 @@ class MainApp(MDApp):
 
     # def my_callback(self, text_of_selection, popup_widget):
     #     print(text_of_selection)
-
+    def set_value(self, *args):
+        """...."""
+        if ItemConfirm.check:
+            print(ItemConfirm.text)
 
 if __name__ == "__main__":
     MainApp().run()
