@@ -18,7 +18,8 @@
             title: "Plot"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('main', 'right')]]
-            right_action_items: [['download', lambda x: print(x)  ], ['content-save-edit', lambda x: print(x)]]
+            right_action_items: [['download', lambda x: print(x)  ], ['content-save-edit', lambda x: print(x)], ["home", lambda x: app.change_screen('main', 'right')]]
+            elevation: 10
 
         MyFigure:
 
@@ -26,13 +27,15 @@
             cols: 1
             spacing: 2
             padding: 3
-            MDSeparator:
-            BoxLayout:
 
+            MDSeparator:
+
+            BoxLayout:
                 height:25
                 width: 344
                 size_hint: (None, None)
                 orientation: 'horizontal'
+
                 MDCheckbox:
                     id: check_vc
                     group: 'group'
@@ -41,14 +44,17 @@
                 MDLabel:
                     text: 'Ra = f(vc)'
                     font_style: "Body2"
+
                 MDCheckbox:
                     id: check_vf
                     group: 'group'
                     size_hint: None, None
                     size: dp(30), dp(30)
+
                 MDLabel:
                     text: 'Ra = f(vf)'
                     font_style: "Body2"
+
             MDSeparator:
 
             BoxLayout:
@@ -57,22 +63,27 @@
                 width: 344
                 size_hint: (None, None)
                 orientation: 'horizontal'
+
                 MDLabel:
                     text: 'Vc'
                     halign: "center"
                     font_style: "Caption"
+
                 MDLabel:
                     text: 'Vf'
                     halign: "center"
                     font_style: "Caption"
+
                 MDLabel:
                     text: 'fz'
                     halign: "center"
                     font_style: "Caption"
+
                 MDLabel:
                     text: 'ap'
                     halign: "center"
                     font_style: "Caption"
+
                 MDLabel:
                     text: 'Ra'
                     halign: "center"
@@ -86,11 +97,8 @@
                 orientation: 'horizontal'
 
                 TextInput:
-
                     id: Vc_01
                     font_size: sp(10)
-                    background_color: 0,0,0,0
-               
                 TextInput:
                     id: Vf_01
                     font_size: sp(10)

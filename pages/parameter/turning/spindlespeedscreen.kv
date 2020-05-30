@@ -15,7 +15,8 @@
             title: "Spindle speed"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('turning_screen', 'right')]]
-
+            right_action_items: [["home", lambda x: app.change_screen('main', 'right')]]
+            elevation: 10
 
         GridLayout:
             cols:1
@@ -45,15 +46,20 @@
 
 
 
-            MDFlatButton:
+            MDRaisedButton:
                 text: "Clear"
-                increment_width: "295dp"
+                increment_width: "297dp"
                 text_color: 1, 1, 1, 1
                 md_bg_color: app.theme_cls.primary_color
                 halign: "center"
                 height: dp(40)
+                elevation_normal: 10
                 on_release:
                     app.clear_text(machined_diameter, cutting_speed)
 
 
             MDLabel:
+
+    Image:
+        source: "icons/calculator.png"
+        opacity: .05

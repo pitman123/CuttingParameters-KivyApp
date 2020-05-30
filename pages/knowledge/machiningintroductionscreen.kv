@@ -1,37 +1,31 @@
+#:import escape_markup kivy.utils
+#:import markup kivy.core.text
 
 <IntroductionContent>
 
-    size_hint: 1, None
-    height: self.minimum_height
-    orientation: 'vertical'
-    adaptive_size: True
+    adaptive_height: True
     padding: 3,3
-    md_bg_color: 0, 0, 0, 1
-    adaptive_width: True
+    orientation: "vertical"
 
-    MDGridLayout:
-        cols: 1
-        size_hint: 1, None
-        height: self.minimum_height
-        md_bg_color: 0,0,0, 0
 
-        MDLabel:
-            text: root.text
-            size: self.texture_size
-            font_style: "Body2"
-            theme_text_color: "Secondary"
-            size_hint:  1, None
-            halign: 'justify'
-            valign: 'middle'
-            canvas.before:
-                Color:
-                    rgba: hex('#ebf8ff')
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+    MDLabel:
 
-        MDSeparator:
-            height: "2dp"
+        text: root.text
+
+        markup:True
+        font_style: "Body2"
+        theme_text_color: "Secondary"
+        halign: 'justify'
+        #valign: 'middle'
+        italic: True
+
+        size_hint: (1, None)
+        size: self.texture_size
+
+
+
+    MDSeparator:
+        height: "2dp"
 
 
 <MaterialsContent>
@@ -50,6 +44,7 @@
         height: self.texture_size[1]
         halign: 'justify'
         valign: 'middle'
+        italic: True
 
     FitImage:
         source: "icons/stal.png"
@@ -129,12 +124,12 @@
 
         ScrollView:
 
-            GridLayout:
+            MDGridLayout:
                 cols: 1
-                size_hint_y: None
+
+                adaptive_height: True
                 padding: 3, 3
                 spacing: 3
-                height: self.minimum_height
                 id: box
 
                 MDLabel:

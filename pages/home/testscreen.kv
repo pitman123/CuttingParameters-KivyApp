@@ -10,12 +10,11 @@
             title: "Test"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('main', 'right')]]
-
-
-
+            right_action_items: [["home", lambda x: app.change_screen('main', 'right')]]
+            elevation: 10
 
         BoxLayout:
-            padding: 3, 3
+            padding: 3, 5
 
 
             GridLayout:

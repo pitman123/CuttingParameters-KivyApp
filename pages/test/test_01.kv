@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 #:import hex kivy.utils.get_color_from_hex
+#:import markup kivy.core.text
+
 <Test01Screen>:
     id: test_01
     name: "test_01"
@@ -15,7 +17,8 @@
             title: "Test 1"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('test_screen', 'right')]]
-            right_action_items: [['bell-check', lambda x: root.on_checkbox_active()]]
+            right_action_items: [["home", lambda x: app.change_screen('main', 'right')]]
+            elevation: 10
 
         MDGridLayout:
             cols: 1
@@ -26,12 +29,10 @@
                 MDList:
                     padding: 1,1
 
-
-
                     MDLabel:
                         padding: 5,5
-                        text: '1. Ktory z trzech glownych parametrow obrobki ma najwiekszy wplyw na trwalosc ostrza ?'
-
+                        text: '1. Ktory z trzech glownych parametrow obrobki ma najwiekszy wplyw na [b]trwalosc ostrza[/b] ?'
+                        markup: True
                         font_style: "Caption"
                         text_size: self.width, None
                         size_hint: 1, None
@@ -46,10 +47,9 @@
                             Rectangle:
                                 pos: self.pos
                                 size: self.size
+
                     MDSeparator:
                         height:
-
-
 
                     ListItemWithCheckbox:
                         text: 'Glebokosc skrawania'
@@ -58,12 +58,11 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-a-circle"
+                            icon: "alpha-a-circle-outline"
 
                         RightCheckbox:
                             id: a
                             size: dp(35), dp(35)
-
 
                     ListItemWithCheckbox:
                         text: 'Posuw'
@@ -72,13 +71,12 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-b-circle"
+                            icon: "alpha-b-circle-outline"
 
                         RightCheckbox:
                             id: b
                             name: 'b'
                             size: dp(35), dp(35)
-
 
                     ListItemWithCheckbox:
                         text: 'Predkosc skrawania'
@@ -87,26 +85,23 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-c-circle"
+                            icon: "alpha-c-circle-outline"
 
                         RightCheckbox:
                             id: c
                             size: dp(35), dp(35)
 
-
-
-
-
+                    MDSeparator:
+                        height:
                     MDLabel:
                         padding: 5,5
-                        text: '2. Jakie jest oznaczenie wg ISO pokrywanych plytek weglikowych?'
-
+                        text: '2. Jakie jest oznaczenie wg ISO pokrywanych [b]plytek weglikowych[/b]?'
+                        markup: True
                         font_style: "Caption"
                         text_size: self.width, None
                         size_hint: 1, None
                         user_font_size: "30sp"
                         height: self.texture_size[1]
-
 
                         canvas.before:
                             Color:
@@ -114,24 +109,21 @@
                             Rectangle:
                                 pos: self.pos
                                 size: self.size
-
-
-
+                    MDSeparator:
+                        height:
 
                     ListItemWithCheckbox:
                         text: 'HC'
-
                         md_bg_color: 0, 0, 0
                         font_style: "Caption"
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-a-circle"
+                            icon: "alpha-a-circle-outline"
 
                         RightCheckbox:
                             id: a
                             size: dp(35), dp(35)
-
 
                     ListItemWithCheckbox:
                         text: 'CC'
@@ -141,14 +133,12 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-b-circle"
+                            icon: "alpha-b-circle-outline"
 
                         RightCheckbox:
                             id: b
                             name: 'b'
                             size: dp(35), dp(35)
-
-
 
                     ListItemWithCheckbox:
                         text: 'PD'
@@ -158,7 +148,7 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-c-circle"
+                            icon: "alpha-c-circle-outline"
 
 
                         RightCheckbox:
@@ -166,11 +156,13 @@
                             size: dp(35), dp(35)
 
 
+                    MDSeparator:
+                        height:
 
                     MDLabel:
                         padding: 5,5
-                        text: '3. Jakie sa dwie glowne metody pokrywania plytek weglikowych?'
-
+                        text: '3. Jakie sa dwie glowne metody pokrywania [b]plytek weglikowych[/b]?'
+                        markup: True
                         font_style: "Caption"
                         text_size: self.width, None
                         size_hint: 1, None
@@ -183,8 +175,8 @@
                             Rectangle:
                                 pos: self.pos
                                 size: self.size
-
-
+                    MDSeparator:
+                        height:
 
                     ListItemWithCheckbox:
                         text: 'AVD'
@@ -194,13 +186,11 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-a-circle"
+                            icon: "alpha-a-circle-outline"
 
                         RightCheckbox:
                             id: a
                             size: dp(35), dp(35)
-
-
 
                     ListItemWithCheckbox:
                         text: 'CVD'
@@ -210,14 +200,12 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-b-circle"
+                            icon: "alpha-b-circle-outline"
 
                         RightCheckbox:
                             id: b
                             name: 'b'
                             size: dp(35), dp(35)
-
-
 
                     ListItemWithCheckbox:
                         text: 'CBN'
@@ -227,20 +215,19 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-c-circle"
+                            icon: "alpha-c-circle-outline"
 
 
                         RightCheckbox:
                             id: c
                             size: dp(35), dp(35)
 
-
-
-
+                    MDSeparator:
+                        height:
                     MDLabel:
                         padding: 5,5
-                        text: '4. Jaka jest definicja wartosci oporu wlasciwego skrawania?'
-
+                        text: '4. Jaka jest definicja [b]wartosci oporu wlasciwego[/b] skrawania?'
+                        markup: True
                         font_style: "Caption"
                         text_size: self.width, None
                         size_hint: 1, None
@@ -254,7 +241,8 @@
                                 pos: self.pos
                                 size: self.size
 
-
+                    MDSeparator:
+                        height:
 
                     ListItemWithCheckbox:
                         text: 'Maksymalna grubosc wiorow'
@@ -264,13 +252,11 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-a-circle"
+                            icon: "alpha-a-circle-outline"
 
                         RightCheckbox:
                             id: a
                             size: dp(35), dp(35)
-
-
 
                     ListItemWithCheckbox:
                         text: 'Wspolczynnik korekcji'
@@ -280,14 +266,12 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-b-circle"
+                            icon: "alpha-b-circle-outline"
 
                         RightCheckbox:
                             id: b
                             name: 'b'
                             size: dp(35), dp(35)
-
-
 
                     ListItemWithCheckbox:
                         text: 'Sila posuwowa'
@@ -297,12 +281,23 @@
                         text_size: self.size
                         height: "42dp"
                         IconLeftWidget:
-                            icon: "alpha-c-circle"
-
+                            icon: "alpha-c-circle-outline"
 
                         RightCheckbox:
                             id: c
                             size: dp(35), dp(35)
+
+    MDFloatingActionButton:
+        icon: "playlist-check"
+        theme_text_color: "Custom"
+        text_color: 1,1,1,1
+        user_font_size: "20sp"
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": 0.925, "center_y": 0.08}
+        elevation_normal: 9
+        on_release:
+            root.on_checkbox_active()
+
 
 
 

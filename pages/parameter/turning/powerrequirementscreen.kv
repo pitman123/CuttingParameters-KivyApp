@@ -1,12 +1,21 @@
+<ItemConfirm>
+    id: item_confirm
+    on_release: root.set_icon(check)
+
+    RightCheckbox:
+        id: check
+        group: "check"
+
+<MyMDRaisedButton>:
+    text: "OK"
+    on_release: app.set_value()
+
 <PowerRequirementScreen>:
 
     score: score
     metal_removal_rate: metal_removal_rate
     specific_cutting_force: specific_cutting_force
     field: field
-
-    id: power_requirement_screen
-    name: 'power_requirement_screen'
 
     BoxLayout:
         orientation: "vertical"
@@ -16,7 +25,8 @@
             title: "Power requirement"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('turning_screen', 'right')]]
-
+            right_action_items: [["home", lambda x: app.change_screen('main', 'right')]]
+            elevation: 10
 
         GridLayout:
             cols:1
@@ -41,29 +51,36 @@
 
             MDTextField:
                 id: field
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                size_hint_x: None
+                width: "200dp"
+                hint_text: "Password"
+                on_focus: if self.focus: root.on_checkbox_active()
+
+            MDTextField:
 
                 size_hint_x: None
                 width: "50dp"
-                hint_text: "Password"
-                on_focus: if self.focus: root.menu.open()
-
+                hint_text: "kat"
 
 
             MyMDTextField:
                 id: specific_cutting_force
                 hint_text: "Specific cutting force (kc) [N/mm2]"
 
-
-
-            MDFlatButton:
+            MDRaisedButton:
                 text: "Clear"
-                increment_width: "295dp"
+                increment_width: "296dp"
                 text_color: 1, 1, 1, 1
                 md_bg_color: app.theme_cls.primary_color
                 halign: "center"
                 height: dp(40)
+                elevation_normal: 10
                 on_release:
                     app.clear_text(machined_diameter, cutting_speed)
 
-
             MDLabel:
+
+    Image:
+        source: "icons/calculator.png"
+        opacity: .05

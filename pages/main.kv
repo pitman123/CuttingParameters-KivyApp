@@ -146,9 +146,12 @@ GridLayout:
 
         MDToolbar:
             id: toolbar
-            title: "App"
+            title: "CuttingParameters"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["menu", lambda x: None]]
+            pos_hint: {"top": 1}
+            elevation: 10
+
 
         MDBottomNavigation:
             id: panel
@@ -237,7 +240,7 @@ GridLayout:
                             border_radius: '10dp'
 
                             MDIconButton:
-                                icon: "chart-areaspline"
+                                icon: "chart-scatter-plot"
                                 pos_hint: {"center_x": .5, "center_y": .5}
                                 user_font_size: "70sp"
                                 halign: "center"
