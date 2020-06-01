@@ -37,12 +37,12 @@ MDCheckbox
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Builder.load_string(KV)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/checkbox.gif
     :align: center
@@ -97,12 +97,12 @@ MDCheckbox with group
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Builder.load_string(KV)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/checkbox-group.gif
     :align: center
@@ -125,12 +125,12 @@ MDSwitch
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Builder.load_string(KV)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/md-switch.gif
     :align: center

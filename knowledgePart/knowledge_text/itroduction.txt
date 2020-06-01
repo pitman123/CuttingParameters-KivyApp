@@ -1,0 +1,4 @@
+        [b]Celem obróbki skrawaniem[/b] jest nadanie obrabianemu przedmiotowi żądanego kształtu, wymiarów i pożądanych właściwości warstwy wierzchniej przez usunięcie materiału.
+        Jest to [b]klasyczna metoda kształtowania[/b], podobnie jak kucie, odlewanie czy spawanie.
+        Skrawanie wyróżnia się [b]najdokładniejszą obróbką[/b], nieosiągalną innymi metodami oraz elastycznością, która odgrywa szczególną rolę, zwłaszcza w produkcji małoseryjnej.
+         Inną ważną cechą obróbki skrawaniem jest stosunkowo [b]łatwe przygotowanie produkcji[/b]. Rozwój elastycznych systemów obróbkowych umożliwia łatwe i szybkie zmiany w procesie produkcyjnym, a więc wytwarzanie znacznie krótszych serii niż wcześniej, zgodnie z wymaganiami klientów. To z kolei często uniemożliwia stosowanie wstępnego przygotowania przedmiotów obrabianych, opłacalnego przy dużych seriach i zmusza do wykorzystania obróbki skrawaniem.

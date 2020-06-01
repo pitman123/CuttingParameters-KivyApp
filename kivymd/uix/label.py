@@ -38,12 +38,12 @@ and default is positioned on the left:
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Builder.load_string(KV)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/md-label-to-left.png
     :align: center
@@ -85,7 +85,7 @@ and default is positioned on the left:
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             screen = Builder.load_string(KV)
             # Names of standard color themes.
@@ -106,7 +106,7 @@ and default is positioned on the left:
             return screen
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/md-label-theme-text-color.png
     :align: center
@@ -155,7 +155,7 @@ parameter:
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             screen = Builder.load_string(KV)
             # Names of standard font styles.
@@ -170,7 +170,7 @@ parameter:
             return screen
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/md-label-font-style.gif
     :align: center

@@ -92,7 +92,7 @@ parameter to `True`:
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             self.screen = Builder.load_string(KV)
@@ -108,7 +108,7 @@ parameter to `True`:
             self.screen.ids.text_field_error.error = True
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/text-field-helper-mode-on-error.gif
     :align: center

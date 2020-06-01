@@ -15,7 +15,7 @@ KivyToast
 
         MDToolbar:
             id: toolbar
-            title: 'Test Toast'
+            title: 'testPart Toast'
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [['menu', lambda x: '']]
 
@@ -29,16 +29,16 @@ KivyToast
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def show_toast(self):
             '''Displays a toast on the screen.'''
 
-            toast('Test Kivy Toast')
+            toast('testPart Kivy Toast')
 
         def build(self):
             return Builder.load_string(KV)
 
-    Test().run()
+    testPart().run()
 """
 
 from kivy.core.window import Window

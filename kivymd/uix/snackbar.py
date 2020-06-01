@@ -34,12 +34,12 @@ Usage
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Builder.load_string(KV)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/snackbar-simple.gif
     :align: center
@@ -67,7 +67,7 @@ Usage with button
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Builder.load_string(KV)
 
@@ -77,7 +77,7 @@ Usage with button
             toast(instance.text)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/snackbar-button.gif
     :align: center
@@ -107,7 +107,7 @@ Custom usage
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             self.screen = Builder.load_string(KV)
@@ -136,7 +136,7 @@ Custom usage
                 anim.start(self.screen.ids.button)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/snackbar-custom-usage.gif
     :align: center

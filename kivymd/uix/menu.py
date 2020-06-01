@@ -32,7 +32,7 @@ Usage
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             self.screen = Builder.load_string(KV)
@@ -45,7 +45,7 @@ Usage
             return self.screen
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/menu-usage.gif
     :align: center
@@ -160,7 +160,7 @@ Full example
         pass
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             self.screen = Builder.load_string(KV)
@@ -182,7 +182,7 @@ Full example
             return self.screen
 
 
-    Test().run()
+    testPart().run()
 
 Menu with MDToolbar
 -------------------
@@ -248,7 +248,7 @@ Menu with MDToolbar
             self.md_bg_color = self.theme_cls.primary_color
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             self.screen = Builder.load_string(KV)
@@ -267,7 +267,7 @@ Menu with MDToolbar
             return self.screen
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/menu-with-toolbar.gif
     :align: center
@@ -303,7 +303,7 @@ Bottom position
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             self.screen = Builder.load_string(KV)
@@ -326,7 +326,7 @@ Bottom position
             return self.screen
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/menu-position.gif
     :align: center
@@ -352,7 +352,7 @@ Center position
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             self.screen = Builder.load_string(KV)
@@ -372,7 +372,7 @@ Center position
             return self.screen
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/menu-position-center.gif
     :align: center

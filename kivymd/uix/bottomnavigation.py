@@ -67,7 +67,7 @@ Example
     from kivy.lang import Builder
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
 
         def build(self):
             self.theme_cls.primary_palette = "Gray"
@@ -114,7 +114,7 @@ Example
             )
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/bottom-navigation.gif
     :align: center

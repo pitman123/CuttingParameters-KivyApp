@@ -1,5 +1,5 @@
 """
-The calculator module, containing all method to calculating different sort of cutting parameters.
+    The calculator module, containing all method to calculating different sort of cutting parameters.
 """
 
 from math import pi

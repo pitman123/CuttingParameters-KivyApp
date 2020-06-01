@@ -63,7 +63,7 @@ the widget.
             self.text_color = [0, 0, 0, 1]
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         menu_items = []
 
         def build(self):
@@ -80,7 +80,7 @@ the widget.
             return Factory.HoverBehaviorExample()
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/hover-behavior.gif
    :width: 250 px

@@ -67,7 +67,7 @@ Example
     ]
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         context_menu = None
         menu = MENU
 
@@ -84,7 +84,7 @@ Example
             return root
 
 
-    Test().run()
+    testPart().run()
 """
 
 from kivy.animation import Animation

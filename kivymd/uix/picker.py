@@ -33,7 +33,7 @@ MDTimePicker
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Builder.load_string(KV)
 
@@ -44,7 +44,7 @@ MDTimePicker
             time_dialog.open()
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/MDTimePicker.gif
     :align: center

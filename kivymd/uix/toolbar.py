@@ -39,12 +39,12 @@ Top
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Builder.load_string(KV)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/toolbar-1.png
     :align: center
@@ -151,12 +151,12 @@ Usage
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Builder.load_string(KV)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/toolbar-8.png
     :align: center

@@ -52,12 +52,12 @@ Usage
     ''')
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             return Factory.ExampleBanner()
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/banner-example-1.gif
     :align: center

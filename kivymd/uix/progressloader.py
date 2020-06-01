@@ -43,7 +43,7 @@ Example
     ''')
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
 
         def build(self):
             self.main_widget = Factory.Root()
@@ -81,7 +81,7 @@ Example
             toast('Done')
 
 
-    Test().run()
+    testPart().run()
 """
 
 from kivy.clock import Clock

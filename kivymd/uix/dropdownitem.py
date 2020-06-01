@@ -25,7 +25,7 @@ Usage
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             self.screen = Builder.load_string(KV)
@@ -34,7 +34,7 @@ Usage
             return self.screen
 
 
-    Test().run()
+    testPart().run()
 
 .. seealso::
 

@@ -521,13 +521,13 @@ End full code
     '''
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             self.theme_cls.theme_style = "Dark"
             return Builder.load_string(KV)
 
 
-    Test().run()
+    testPart().run()
 """
 
 __all__ = (

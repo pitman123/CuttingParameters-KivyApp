@@ -39,13 +39,13 @@ Usage
         pass
 
 
-    class Test(MDApp):
+    class testPart(MDApp):
         def build(self):
             self.theme_cls.theme_style = "Dark"
             return Builder.load_string(KV)
 
 
-    Test().run()
+    testPart().run()
 
 .. image:: https://github.com/HeaTTheatR/KivyMD-data/raw/master/gallery/kivymddoc/focus-widget.gif
     :align: center
