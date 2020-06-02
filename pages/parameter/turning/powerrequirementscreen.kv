@@ -15,7 +15,8 @@
     score: score
     metal_removal_rate: metal_removal_rate
     specific_cutting_force: specific_cutting_force
-    field: field
+    entering_angle: entering_angle
+    rake_angle: rake_angle
 
     BoxLayout:
         orientation: "vertical"
@@ -30,7 +31,7 @@
 
         GridLayout:
             cols:1
-            spacing: 20
+            spacing: 15
             padding: 10
 
             MDLabel:
@@ -44,24 +45,17 @@
                 font_style: 'H3'
                 halign: "center"
 
-
             MyMDTextField:
                 id: metal_removal_rate
                 hint_text: "Metal removal rate (Q) [cm3/min]"
 
-            MDTextField:
-                id: field
-                pos_hint: {'center_x': .5, 'center_y': .5}
-                size_hint_x: None
-                width: "200dp"
-                hint_text: "Password"
-                on_focus: if self.focus: root.on_checkbox_active()
+            MyMDTextField:
+                id: entering_angle
+                hint_text: "Entering angle"
 
-            MDTextField:
-
-                size_hint_x: None
-                width: "50dp"
-                hint_text: "kat"
+            MyMDTextField:
+                id: rake_angle
+                hint_text: "Rake angle"
 
 
             MyMDTextField:
