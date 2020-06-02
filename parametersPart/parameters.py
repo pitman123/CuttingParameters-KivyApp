@@ -1,10 +1,10 @@
 """
-    All from parameters part
+    The "parameters.py" module, containing all screens class and main set of parametersPart.
 """
+
 from kivy.properties import ObjectProperty, Clock
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.selectioncontrol import MDCheckbox
-
 from kivymd.uix.button import MDRaisedButton
 from kivymd.uix.list import IRightBodyTouch
 
@@ -13,6 +13,7 @@ from parametersPart.calculator import cuttingSpeed, spindleSpeed, metalRemovalRa
 
 class MyCheckbox(IRightBodyTouch, MDCheckbox):
     pass
+
 
 ########################################
 # All main screen from parameters
@@ -46,6 +47,7 @@ class ReamingScreen(Screen):
 class TolerancesScreen(Screen):
     """"""
     pass
+
 
 ##############################################
 # All main screen from turning
@@ -128,70 +130,12 @@ class MetalRemovalRateScreen(MyScreen):
             self.score.text = '0'
 
 
-from kivymd.uix.list import OneLineAvatarIconListItem, IRightBodyTouch
-
-
-class ItemConfirm(OneLineAvatarIconListItem):
-    divider = None
-    check = ObjectProperty(None)
-
-    def set_icon(self, instance_check):
-        instance_check.active = True
-        check_list = instance_check.get_widgets(instance_check.group)
-        for check in check_list:
-            if check != instance_check:
-                check.active = False
-
-
-class MyMDRaisedButton(MDRaisedButton):
-    pass
-
-
 class PowerRequirementScreen(MyScreen):
     """Class represents the screen for calculating the power requirement in turning."""
-    field = ObjectProperty(None)
-    check = ObjectProperty(None)
-
-    # def on_checkbox_active(self):
-    #
-    #     self.show_MDDialog("5")
-    #
-    # def show_MDDialog(self, result):
-    #     dialog = MDDialog(
-    #         title="Phone ringtone",
-    #         type="confirmation",
-    #         size_hint=[.8, .8],
-    #         items=[
-    #             ItemConfirm(text="90"),
-    #             ItemConfirm(text="80"),
-    #             ItemConfirm(text="70"),
-    #             ItemConfirm(text="60"),
-    #             ItemConfirm(text="50"),
-    #             ItemConfirm(text="40"),
-    #             ItemConfirm(text="30"),
-    #             ItemConfirm(text="20"),
-    #             ItemConfirm(text="10"),
-    #             ItemConfirm(text="5"),
-    #             ItemConfirm(text="0"),
-    #         ],
-    #         buttons=[
-    #             MyMDRaisedButton(),
-    #         ],
-    #     )
-    #     dialog.open()
+    rake_angle = ObjectProperty(None)
 
     def submit(self, *args):
         pass
-
-    # def set_value(self, instance):
-    #     def set_value(interval):
-    #         if instance:
-    #
-    #             self.field.text = instance
-    #         else:
-    #             self.field.text = '0'
-    #
-    #     Clock.schedule_once(set_value, 0.5)
 
 
 class TimeInScreen(MyScreen):
@@ -221,31 +165,45 @@ class TimeInScreen(MyScreen):
 #################################
 
 class MillingCuttingSpeedScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class MillingSpindleSpeedScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class MillingTableFeedScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class MillingRemovalRateScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class MillingTimeInCutScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class MillingTotalCycleTimeScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class MillingPowerRequirement(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 #################################
@@ -299,10 +257,8 @@ class TappingTimeInCutScreen(MyScreen):
 class TappingTotalCycleTime(MyScreen):
     pass
 
-
 ################################################
 # All main screen from reaming, Add!!
 ################################################
 
 # Add !!!
-
