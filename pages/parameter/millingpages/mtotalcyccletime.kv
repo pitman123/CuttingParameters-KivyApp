@@ -1,9 +1,9 @@
 <MillingTotalCycleTimeScreen>:
 
     score: score
-    depth_of_cut: depth_of_cut
-    feed_per_revolution: feed_per_revolution
-    cutting_speed: cutting_speed
+    time_in_cut: time_in_cut
+    number_of_passes: number_of_passes
+    total_idle_time: total_idle_time
 
     id: metal_removal_rate_screen
     name: 'metal_removal_rate_screen'
@@ -13,7 +13,7 @@
 
         MDToolbar:
             id: toolbar
-            title: "Metal removal rate"
+            title: "Total cycle time"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('milling_screen', 'right')]]
             right_action_items: [["home", lambda x: app.change_screen('main', 'right')]]
@@ -26,7 +26,7 @@
             padding: 10
 
             MDLabel:
-                text: 'Metal removal rate (Q) cm3/min'
+                text: 'Time cycle time [s]'
                 halign: "center"
 
             MDLabel:
@@ -37,18 +37,18 @@
 
 
             MyMDTextField:
-                id: feed_per_revolution
-                hint_text: "Feed per revolution (fn) [mm]"
+                id: time_in_cut
+                hint_text: "Time in cut (Tc) [s]"
 
 
 
             MyMDTextField:
-                id: cutting_speed
-                hint_text: "Cutting speed (vc) [m/min]"
+                id: number_of_passes
+                hint_text: "Number of passes [pcs]"
 
             MyMDTextField:
-                id: depth_of_cut
-                hint_text: "Depth of cut (ap) [mm]"
+                id: total_idle_time
+                hint_text: "Total idle time [s]"
 
 
             MDRaisedButton:

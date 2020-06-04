@@ -1,9 +1,8 @@
 <MillingTimeInCutScreen>:
 
     score: score
-    depth_of_cut: depth_of_cut
-    feed_per_revolution: feed_per_revolution
-    cutting_speed: cutting_speed
+    length_of_cut: length_of_cut
+    table_feed: table_feed
 
     id: metal_removal_rate_screen
     name: 'metal_removal_rate_screen'
@@ -13,7 +12,7 @@
 
         MDToolbar:
             id: toolbar
-            title: "Metal removal rate"
+            title: "Time in cut (Tc)"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('milling_screen', 'right')]]
             right_action_items: [["home", lambda x: app.change_screen('main', 'right')]]
@@ -26,7 +25,7 @@
             padding: 10
 
             MDLabel:
-                text: 'Metal removal rate (Q) cm3/min'
+                text: 'Time in cut (Tc) s'
                 halign: "center"
 
             MDLabel:
@@ -37,19 +36,14 @@
 
 
             MyMDTextField:
-                id: feed_per_revolution
-                hint_text: "Feed per revolution (fn) [mm]"
+                id: length_of_cut
+                hint_text: "Length of cut (lm) [mm]"
 
 
 
             MyMDTextField:
-                id: cutting_speed
-                hint_text: "Cutting speed (vc) [m/min]"
-
-            MyMDTextField:
-                id: depth_of_cut
-                hint_text: "Depth of cut (ap) [mm]"
-
+                id: table_feed
+                hint_text: "Table feed (vf) [mm/min]"
 
             MDRaisedButton:
                 text: "Clear"

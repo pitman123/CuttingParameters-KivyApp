@@ -1,19 +1,17 @@
 <MillingPowerRequirement>:
 
-    score: score
-    depth_of_cut: depth_of_cut
-    feed_per_revolution: feed_per_revolution
-    cutting_speed: cutting_speed
 
-    id: metal_removal_rate_screen
-    name: 'metal_removal_rate_screen'
+    metal_removal_rate: metal_removal_rate
+    rake_angle: rake_angle
+    specific_cutting_force: specific_cutting_force
+
 
     BoxLayout:
         orientation: "vertical"
 
         MDToolbar:
             id: toolbar
-            title: "Metal removal rate"
+            title: "Power requirement"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('milling_screen', 'right')]]
             right_action_items: [["home", lambda x: app.change_screen('main', 'right')]]
@@ -26,7 +24,7 @@
             padding: 10
 
             MDLabel:
-                text: 'Metal removal rate (Q) cm3/min'
+                text: 'Power requirement (Pc) [kW]'
                 halign: "center"
 
             MDLabel:
@@ -37,18 +35,18 @@
 
 
             MyMDTextField:
-                id: feed_per_revolution
-                hint_text: "Feed per revolution (fn) [mm]"
+                id: metal_removal_rate
+                hint_text: "Metal removal rate (Q) [cm3/min]"
 
 
 
             MyMDTextField:
-                id: cutting_speed
-                hint_text: "Cutting speed (vc) [m/min]"
+                id: rake_angle
+                hint_text: "Rake angle"
 
             MyMDTextField:
-                id: depth_of_cut
-                hint_text: "Depth of cut (ap) [mm]"
+                id: specific_cutting_force
+                hint_text: "Specific cutting force (kc) [N/mm2]"
 
 
             MDRaisedButton:

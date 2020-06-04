@@ -1,9 +1,8 @@
 <MillingRemovalRateScreen>:
 
     score: score
-    depth_of_cut: depth_of_cut
-    feed_per_revolution: feed_per_revolution
-    cutting_speed: cutting_speed
+    feed_speed: feed_speed
+    axial_depth_of_cut: axial_depth_of_cut
 
     id: metal_removal_rate_screen
     name: 'metal_removal_rate_screen'
@@ -37,18 +36,14 @@
 
 
             MyMDTextField:
-                id: feed_per_revolution
-                hint_text: "Feed per revolution (fn) [mm]"
+                id: feed_speed
+                hint_text: "Feed speed (vf) [mm/min]"
 
 
 
             MyMDTextField:
-                id: cutting_speed
-                hint_text: "Cutting speed (vc) [m/min]"
-
-            MyMDTextField:
-                id: depth_of_cut
-                hint_text: "Depth of cut (ap) [mm]"
+                id: axial_depth_of_cut
+                hint_text: "Axial depth of cut (ap) [mm]"
 
 
             MDRaisedButton:
