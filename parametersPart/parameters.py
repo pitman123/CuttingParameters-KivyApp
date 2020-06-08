@@ -211,27 +211,45 @@ class MillingPowerRequirement(MyScreen):
 ################################
 
 class DrillingCuttingSpeedScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
+
+
+class DrillingSpindleSpeedScreen(MyScreen):
+
+    def submit(self, *args):
+        pass
 
 
 class DrillingFeedForceScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class DrillingFeedSpeedScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class DrillingPowerRequirementScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class DrillingTimeINCutScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class DrillingTotalCycleTimeScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 #################################
