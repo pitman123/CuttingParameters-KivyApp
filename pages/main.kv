@@ -7,10 +7,10 @@
 # parameter
 #: include pages/parameter/turningscreen.kv
 #: include pages/parameter/millingscreen.kv
-# add drilling screen
-# add tapping screen
-# add reaming screen
-# add tolerances screen
+#: include pages/parameter/drillingscreen.kv
+#: include pages/parameter/tappingscreen.kv
+#: include pages/parameter/reamingscreen.kv
+#: include pages/parameter/tolerancesscreen.kv
 
 # parameter -> turning pages
 #: include pages/parameter/turning/cuttingspeedscreen.kv
@@ -156,6 +156,24 @@ GridLayout:
         MillingTotalCycleTimeScreen:
             name: "milling_total_cycle_time_screen"
             id: milling_total_cycle_time_screen
+        DrillingScreen:
+            name: "drilling_screen"
+            id: drilling_screen
+        DrillingCuttingSpeedScreen:
+            name: "drilling_cutting_speed_screen"
+            id: drilling_cutting_speed_screen
+        DrillingSpindleSpeedScreen:
+            name: "drilling_spindle_speed_screen"
+            id: drilling_spindle_speed_screen
+        DrillingFeedSpeedScreen:
+            name: "drilling_spindle_screen"
+            id: drilling_spindle_screen
+        DrillingTimeINCutScreen:
+            name: "drilling_time_in_screen"
+            id: drilling_time_in_screen
+        DrillingPowerRequirementScreen:
+            name: "drilling_power_requirement_screen"
+            id: drilling_power_requirement_screen
 
 
 

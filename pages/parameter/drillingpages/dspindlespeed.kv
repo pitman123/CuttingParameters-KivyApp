@@ -1,0 +1,66 @@
+<DrillingSpindleSpeedScreen>:
+
+    score: score
+    drill_diameter: drill_diameter
+    cutting_speed: cutting_speed
+
+
+    MDToolbar:
+        id: toolbar
+        title: "Spindle speed"
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {"top": 1}
+        left_action_items: [["arrow-left", lambda x: app.change_screen('drilling_screen', 'right')]]
+        right_action_items: [["home", lambda x: app.change_screen('main', 'right')]]
+        elevation: 10
+
+    MDLabel:
+        text: 'Spindle speed (n) rpm'
+        halign: "center"
+        size_hint: (1, None)
+        size: self.texture_size
+        pos_hint: {"center_y": .8,"center_x": 0.5}
+
+    MDLabel:
+        id: score
+        text: '0'
+        font_style: 'H3'
+        halign: "center"
+        size_hint: (1, None)
+        size: self.texture_size
+        pos_hint: {"center_y": .7,"center_x": 0.5}
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: "10dp"
+        spacing: "20dp"
+        size_hint_y: None
+        height: self.minimum_height
+        pos_hint: {"center_y": .4}
+
+        MyMDTextField:
+            id: drill_diameter
+            hint_text: "Drill diameter (Dc) [mm]"
+
+        MyMDTextField:
+            id: cutting_speed
+            hint_text: "Cutting speed (Vc) [m/min]"
+
+    MDRaisedButton:
+        text: "Clear"
+        pos_hint: {"center_y": .1,"center_x": 0.5}
+        increment_width: "297dp"
+        text_color: 1, 1, 1, 1
+        md_bg_color: app.theme_cls.primary_color
+        halign: "center"
+        height: dp(40)
+        elevation_normal: 10
+        on_release:
+            app.clear_text(machined_diameter, spindle_speed)
+    Image:
+        source: "icons/calculator.png"
+        opacity: .05
+
+
+
+
