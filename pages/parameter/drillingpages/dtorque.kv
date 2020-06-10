@@ -1,12 +1,12 @@
-<DrillingCuttingSpeedScreen>:
+<DrillingTorqueScreen>:
 
     score: score
-    drill_diameter: drill_diameter
+    power_requirement: power_requirement
     spindle_speed: spindle_speed
 
     MDToolbar:
         id: toolbar
-        title: "Cutting speed"
+        title: "Torque"
         md_bg_color: app.theme_cls.primary_color
         pos_hint: {"top": 1}
         left_action_items: [["arrow-left", lambda x: app.change_screen('drilling_screen', 'right')]]
@@ -14,7 +14,7 @@
         elevation: 10
 
     MDLabel:
-        text: 'Cutting speed (Vc) [m/min]'
+        text: 'Torque (Mc) Nm'
         halign: "center"
         size_hint: (1, None)
         size: self.texture_size
@@ -38,8 +38,8 @@
         pos_hint: {"center_y": .4}
 
         MyMDTextField:
-            id: drill_diameter
-            hint_text: "Drill diameter (Dc) [mm]"
+            id: power_requirement
+            hint_text: "Power requirement (Pc) [kW]"
 
         MyMDTextField:
             id: spindle_speed

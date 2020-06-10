@@ -5,7 +5,7 @@
 
         MDToolbar:
             id: toolbar
-            title: "Turning"
+            title: "Drilling"
             md_bg_color: app.theme_cls.primary_color
             left_action_items: [["arrow-left", lambda x: app.change_screen('parameters_screen', 'right')]]
             right_action_items: [["home", lambda x: app.change_screen('main', 'right')]]
@@ -71,23 +71,13 @@
 
                 MDRectangleFlatIconButton:
 
-                    text: "Total cycle time"
-                    icon: "arrow-right"
-                    halign: "center"
-                    width: dp(343)
-                    height: dp(60)
-                    on_release:
-                        app.change_screen('time_in_screen', 'left')
-
-                MDRectangleFlatIconButton:
-
                     text: "Torque"
                     icon: "arrow-right"
                     halign: "center"
                     width: dp(343)
                     height: dp(60)
                     on_release:
-                        app.change_screen('time_in_screen', 'left')
+                        app.change_screen('drilling_torque_screen', 'left')
 
                 MDLabel:
 
