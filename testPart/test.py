@@ -1,5 +1,5 @@
 """
-    The test module, containing all screens and main set of test app part.
+    The "test.py" module, containing all screens and main set of test app part.
 """
 from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.screenmanager import Screen
@@ -68,4 +68,8 @@ class Test02Screen(Screen):
 
 
 class Test03Screen(Screen):
+    pass
+
+
+class Test04Screen(Screen):
     pass
