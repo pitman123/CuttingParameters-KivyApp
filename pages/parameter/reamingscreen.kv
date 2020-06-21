@@ -29,7 +29,7 @@
                     width: dp(343)
                     height: dp(60)
                     on_release:
-                        app.change_screen('drilling_cutting_speed_screen', 'left')
+                        app.change_screen('reaming_cutting_screen', 'left')
                 MDRectangleFlatIconButton:
 
                     text: "Spindle speed"
@@ -38,7 +38,7 @@
                     width: dp(343)
                     height: dp(60)
                     on_release:
-                        app.change_screen('drilling_spindle_speed_screen', 'left')
+                        app.change_screen('reaming_spindle_screen', 'left')
                 MDRectangleFlatIconButton:
 
                     text: "Feed speed"
@@ -47,7 +47,7 @@
                     width: dp(343)
                     height: dp(60)
                     on_release:
-                        app.change_screen('drilling_spindle_screen', 'left')
+                        app.change_screen('reaming_feed_speed', 'left')
 
                 MDRectangleFlatIconButton:
 
@@ -57,16 +57,6 @@
                     width: dp(343)
                     height: dp(60)
                     on_release:
-                        app.change_screen('drilling_time_in_screen', 'left')
-
-                MDRectangleFlatIconButton:
-
-                    text: "Total cycle time"
-                    icon: "arrow-right"
-                    halign: "center"
-                    width: dp(343)
-                    height: dp(60)
-                    on_release:
-                        app.change_screen('drilling_power_requirement_screen', 'left')
+                        app.change_screen('reaming_time_in_cut', 'left')
 
                 MDLabel:
