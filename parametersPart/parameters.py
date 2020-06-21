@@ -252,31 +252,75 @@ class DrillingTotalCycleTimeScreen(MyScreen):
         pass
 
 
+class DrillingTorqueScreen(MyScreen):
+
+    def submit(self, *args):
+        pass
+
+
 #################################
 # All main screen from tapping, Add!!
 ################################
 
 class TappingCuttingScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class TappingPenetrationRateScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class TappingSpindleSpeedScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class TappingTimeInCutScreen(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
 
 
 class TappingTotalCycleTime(MyScreen):
-    pass
+
+    def submit(self, *args):
+        pass
+
 
 ################################################
 # All main screen from reaming, Add!!
 ################################################
 
-# Add !!!
+class ReamingCuttingScreen(MyScreen):
+
+    def submit(self, *args):
+        pass
+
+
+class ReamingSpindleScreen(MyScreen):
+
+    def submit(self, *args):
+        pass
+
+
+class ReamingFeedSpeed(MyScreen):
+
+    def submit(self, *args):
+        pass
+
+
+class ReamingTimeInCut(MyScreen):
+
+    def submit(self, *args):
+        pass
+
+
+class ReamingTotalCycleTime(MyScreen):
+
+    def submit(self, *args):
+        pass
